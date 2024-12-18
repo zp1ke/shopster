@@ -1,0 +1,15 @@
+{
+  "name": "Shopster",
+  "image": "ghcr.io/thephaseless/devcontainers/flutter:latest",
+  "features": {},
+  "forwardPorts": [],
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "DavidAnson.vscode-markdownlint",
+        "Dart-Code.flutter",
+        "Dart-Code.dart-code"
+      ]
+    }
+  }
+}

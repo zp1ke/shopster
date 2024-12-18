@@ -8,8 +8,11 @@ environment:
   sdk: ^3.6.0
 
 dependencies:
+  flex_color_scheme: ^8.0.2
   flutter:
     sdk: flutter
+  get: ^4.6.6
+  iconsax: ^0.0.8
 
 dev_dependencies:
   flutter_test:
