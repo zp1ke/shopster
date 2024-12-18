@@ -1,5 +1,5 @@
-import 'package:flutter/material.dart';
 import 'package:flex_color_scheme/flex_color_scheme.dart';
+import 'package:flutter/material.dart';
 import 'package:shopster/utils/theme/extension.dart';
 
 class AppTheme {
