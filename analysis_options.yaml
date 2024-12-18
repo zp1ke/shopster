@@ -1,0 +1,10 @@
+# The analyzer can be invoked from the command line by running `flutter analyze`.
+
+# Recommended lints for Flutter apps, packages, and plugins designed to encourage good coding practices.
+include: package:flutter_lints/flutter.yaml
+
+# https://dart.dev/guides/language/analysis-options
+linter:
+  # A list of all available lints and their documentation is published at https://dart.dev/lints.
+  rules:
+    prefer_single_quotes: true
