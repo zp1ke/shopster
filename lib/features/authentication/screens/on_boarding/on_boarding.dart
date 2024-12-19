@@ -99,6 +99,6 @@ class OnBoardingScreen extends StatelessWidget {
   }
 
   void goSignIn() {
-    Get.offNamed(SignInScreen.path);
+    Get.offAllNamed(SignInScreen.path);
   }
 }

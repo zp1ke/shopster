@@ -17,9 +17,6 @@ class AppImage {
     return darkLogo;
   }
 
-  // social
-  static const String google = '$_logosPath/google.png';
-
   // onboarding
   static const String _onBoardingPath = 'assets/images/on_boarding';
   static const String onboardingDelivery = '$_onBoardingPath/delivery.gif';

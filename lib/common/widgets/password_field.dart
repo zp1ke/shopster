@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:shopster/common/styles/sizes.dart';
 
 class PasswordField extends StatefulWidget {
   final String? labelText;
@@ -22,7 +23,7 @@ class _PasswordFieldState extends State<PasswordField> {
   Widget build(BuildContext context) {
     return TextFormField(
       decoration: InputDecoration(
-        prefixIcon: Icon(FontAwesomeIcons.key),
+        prefixIcon: Icon(FontAwesomeIcons.key, size: AppSize.iconXs),
         labelText: widget.labelText,
         hintText: widget.hintText,
         suffixIcon: IconButton(
@@ -33,6 +34,7 @@ class _PasswordFieldState extends State<PasswordField> {
           },
           icon: FaIcon(
             obscure ? FontAwesomeIcons.eye : FontAwesomeIcons.eyeSlash,
+            size: AppSize.iconXs,
           ),
         ),
       ),

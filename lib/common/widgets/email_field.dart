@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:shopster/common/styles/sizes.dart';
 
 class EmailField extends StatelessWidget {
   final String? labelText;
@@ -15,7 +16,7 @@ class EmailField extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextFormField(
       decoration: InputDecoration(
-        prefixIcon: Icon(FontAwesomeIcons.at),
+        prefixIcon: Icon(FontAwesomeIcons.at, size: AppSize.iconXs),
         labelText: labelText,
         hintText: hintText,
       ),

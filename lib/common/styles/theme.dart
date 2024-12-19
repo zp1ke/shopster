@@ -7,7 +7,7 @@ import 'package:shopster/common/styles/theme_extension.dart';
 class AppTheme {
   AppTheme._();
 
-  static const _flexScheme = FlexScheme.indigoM3;
+  static const _flexScheme = FlexScheme.bigStone;
   static final _fontFamily = GoogleFonts.notoSans().fontFamily;
   static final _visualDensity = FlexColorScheme.comfortablePlatformDensity;
   static final _subThemesData = FlexSubThemesData(

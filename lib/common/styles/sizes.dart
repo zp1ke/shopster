@@ -32,4 +32,8 @@ class AppSize {
   static const double defaultSpacing = 24.0;
   static const double itemSpacing = 16.0;
   static const double sectionSpacing = 32.0;
+
+  // sizes
+  static const double pageMinWidth = 200.0;
+  static const double pageMaxWidth = 500.0;
 }

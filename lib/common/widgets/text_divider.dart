@@ -3,25 +3,23 @@ import 'package:shopster/common/styles/sizes.dart';
 
 class TextDividerWidget extends StatelessWidget {
   final String text;
+  final EdgeInsets? padding;
 
   const TextDividerWidget({
     super.key,
     required this.text,
+    this.padding,
   });
 
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
-    return Row(
+    final row = Row(
+      spacing: AppSize.itemSpacing,
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        SizedBox(height: AppSize.sectionSpacing),
-        Flexible(
-          child: Divider(
-            color: theme.hintColor,
-            indent: AppSize.sectionSpacing,
-            endIndent: AppSize.defaultSpacing,
-          ),
+        Expanded(
+          child: Divider(color: theme.hintColor),
         ),
         Text(
           text,
@@ -30,14 +28,14 @@ class TextDividerWidget extends StatelessWidget {
             fontWeight: FontWeight.w600,
           ),
         ),
-        Flexible(
-          child: Divider(
-            color: theme.hintColor,
-            indent: AppSize.defaultSpacing,
-            endIndent: AppSize.sectionSpacing,
-          ),
+        Expanded(
+          child: Divider(color: theme.hintColor),
         ),
       ],
+    );
+    return Padding(
+      padding: padding ?? EdgeInsets.zero,
+      child: row,
     );
   }
 }
