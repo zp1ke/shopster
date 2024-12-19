@@ -20,10 +20,9 @@ class AppSize {
   static const double fontLg = 18.0;
 
   // buttons
-  static const double buttonHeight = 18.0;
-  static const double buttonRadius = 12.0;
-  static const double buttonWidth = 120.0;
-  static const double buttonElevation = 4.0;
+  static const double buttonMinWidth = 64.0;
+  static const double buttonHeight = 56.0;
+  static const double buttonRadius = 10.0;
 
   // images
   static const double imageThumbSize = 80.0;

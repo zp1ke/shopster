@@ -40,7 +40,13 @@ class AppL10nEn extends AppL10n {
   String get signInEmail => 'Email';
 
   @override
+  String get signInEnterEmail => 'Enter your email';
+
+  @override
   String get signInPassword => 'Password';
+
+  @override
+  String get signInEnterPassword => 'Enter your password';
 
   @override
   String get signInAction => 'Sign In';

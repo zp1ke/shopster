@@ -159,11 +159,23 @@ abstract class AppL10n {
   /// **'Email'**
   String get signInEmail;
 
+  /// No description provided for @signInEnterEmail.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter your email'**
+  String get signInEnterEmail;
+
   /// No description provided for @signInPassword.
   ///
   /// In en, this message translates to:
   /// **'Password'**
   String get signInPassword;
+
+  /// No description provided for @signInEnterPassword.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter your password'**
+  String get signInEnterPassword;
 
   /// No description provided for @signInAction.
   ///

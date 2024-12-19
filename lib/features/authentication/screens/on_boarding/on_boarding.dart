@@ -93,7 +93,6 @@ class OnBoardingScreen extends StatelessWidget {
                 .movePageIndicator(OnboardingController.I.pageIndex + 1);
           }
         },
-        style: ElevatedButton.styleFrom(elevation: AppSize.buttonElevation),
         child: FaIcon(FontAwesomeIcons.arrowRight),
       ),
     );

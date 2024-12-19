@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:shopster/common/images.dart';
 import 'package:shopster/common/styles/sizes.dart';
+import 'package:shopster/common/widgets/text_divider.dart';
 import 'package:shopster/features/authentication/screens/sign_in/form.dart';
 import 'package:shopster/l10n/app_l10n.dart';
 
@@ -24,7 +25,7 @@ class SignInScreen extends StatelessWidget {
           children: [
             header(context),
             SignInForm(),
-            divider(context),
+            TextDividerWidget(text: AppL10n.of(context).signInOrDivider),
           ],
         ),
       ),
@@ -49,33 +50,6 @@ class SignInScreen extends StatelessWidget {
         Text(
           appL10n.signInSubtitle,
           style: textTheme.bodyMedium,
-        ),
-      ],
-    );
-  }
-
-  Widget divider(BuildContext context) {
-    final theme = Theme.of(context);
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        SizedBox(height: AppSize.sectionSpacing),
-        Flexible(
-          child: Divider(
-            indent: 60,
-            endIndent: 5,
-          ),
-        ),
-        Text(
-          AppL10n.of(context).signInOrDivider,
-          style:
-              theme.textTheme.labelMedium?.copyWith(color: theme.dividerColor),
-        ),
-        Flexible(
-          child: Divider(
-            indent: 5,
-            endIndent: 60,
-          ),
         ),
       ],
     );

@@ -14,8 +14,14 @@ class SignInForm extends StatelessWidget {
       child: Column(
         spacing: AppSize.itemSpacing,
         children: [
-          EmailField(hintText: appL10n.signInEmail),
-          PasswordField(hintText: appL10n.signInPassword),
+          EmailField(
+            labelText: appL10n.signInEmail,
+            hintText: appL10n.signInEnterEmail,
+          ),
+          PasswordField(
+            labelText: appL10n.signInEmail,
+            hintText: appL10n.signInEnterPassword,
+          ),
           rememberMeForgotPassword(context),
           signInButton(context),
           signUpButton(context),
@@ -54,7 +60,7 @@ class SignInForm extends StatelessWidget {
   Widget signInButton(BuildContext context) {
     return SizedBox(
       width: double.infinity,
-      child: ElevatedButton(
+      child: FilledButton(
         onPressed: () {},
         child: Text(AppL10n.of(context).signInAction),
       ),

@@ -2,10 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class PasswordField extends StatefulWidget {
+  final String? labelText;
   final String? hintText;
 
   const PasswordField({
     super.key,
+    this.labelText,
     this.hintText,
   });
 
@@ -20,7 +22,8 @@ class _PasswordFieldState extends State<PasswordField> {
   Widget build(BuildContext context) {
     return TextFormField(
       decoration: InputDecoration(
-        prefixIcon: FaIcon(FontAwesomeIcons.key),
+        prefixIcon: Icon(FontAwesomeIcons.key),
+        labelText: widget.labelText,
         hintText: widget.hintText,
         suffixIcon: IconButton(
           onPressed: () {
