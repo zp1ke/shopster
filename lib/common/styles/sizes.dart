@@ -33,5 +33,3 @@ class AppSize {
   static const double itemSpacing = 16.0;
   static const double sectionSpacing = 32.0;
 }
-
-enum TextSize { sm, md, lg }

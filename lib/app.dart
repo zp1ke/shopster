@@ -1,23 +1,22 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:shopster/common/styles/theme.dart';
+import 'package:shopster/features/authentication/screens/on_boarding/on_boarding.dart';
+import 'package:shopster/features/authentication/screens/sign_in.dart';
 
 class App extends StatelessWidget {
   const App({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
       themeMode: ThemeMode.system,
       theme: AppTheme.light,
       darkTheme: AppTheme.dark,
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text('Shopster'),
-        ),
-        body: const Center(
-          child: Text('Hello, Shopster!'),
-        ),
-      ),
+      home: OnBoardingScreen(),
+      getPages: [
+        SignInScreen.route(),
+      ],
     );
   }
 }
