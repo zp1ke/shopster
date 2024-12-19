@@ -27,6 +27,7 @@ class AppSize {
 
   // images
   static const double imageThumbSize = 80.0;
+  static const double logoSize = 150.0;
 
   // spacing
   static const double defaultSpacing = 24.0;

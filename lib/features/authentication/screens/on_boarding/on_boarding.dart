@@ -5,7 +5,7 @@ import 'package:shopster/common/images.dart';
 import 'package:shopster/common/styles/sizes.dart';
 import 'package:shopster/features/authentication/controllers/on_boarding.dart';
 import 'package:shopster/features/authentication/screens/on_boarding/page.dart';
-import 'package:shopster/features/authentication/screens/sign_in.dart';
+import 'package:shopster/features/authentication/screens/sign_in/sign_in.dart';
 import 'package:shopster/l10n/app_l10n.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
@@ -62,7 +62,7 @@ class OnBoardingScreen extends StatelessWidget {
       right: AppSize.defaultSpacing,
       child: TextButton(
         onPressed: goSignIn,
-        child: Text(AppL10n.of(context).skip),
+        child: Text(AppL10n.of(context).onboardingSkip),
       ),
     );
   }

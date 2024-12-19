@@ -135,11 +135,65 @@ abstract class AppL10n {
   /// **'From our doorstep to yours, your order is on its way - Swift, secure and contactless delivery!'**
   String get onboardingDeliverySubtitle;
 
-  /// No description provided for @skip.
+  /// No description provided for @onboardingSkip.
   ///
   /// In en, this message translates to:
   /// **'Skip'**
-  String get skip;
+  String get onboardingSkip;
+
+  /// No description provided for @signInTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Welcome Back'**
+  String get signInTitle;
+
+  /// No description provided for @signInSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Discover limitless choices and unmatched convenience'**
+  String get signInSubtitle;
+
+  /// No description provided for @signInEmail.
+  ///
+  /// In en, this message translates to:
+  /// **'Email'**
+  String get signInEmail;
+
+  /// No description provided for @signInPassword.
+  ///
+  /// In en, this message translates to:
+  /// **'Password'**
+  String get signInPassword;
+
+  /// No description provided for @signInAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Sign In'**
+  String get signInAction;
+
+  /// No description provided for @signInRememberMe.
+  ///
+  /// In en, this message translates to:
+  /// **'Remember me'**
+  String get signInRememberMe;
+
+  /// No description provided for @signInForgotPassword.
+  ///
+  /// In en, this message translates to:
+  /// **'Forgot Password?'**
+  String get signInForgotPassword;
+
+  /// No description provided for @signInOrDivider.
+  ///
+  /// In en, this message translates to:
+  /// **'or Sign In with'**
+  String get signInOrDivider;
+
+  /// No description provided for @signUpAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Sign Up'**
+  String get signUpAction;
 }
 
 class _AppL10nDelegate extends LocalizationsDelegate<AppL10n> {

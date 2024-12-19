@@ -65,7 +65,6 @@ class AppThemeColors extends ThemeExtension<AppThemeColors> {
       onSuccessContainer:
           Color.lerp(onSuccessContainer, other.onSuccessContainer, t) ??
               other.onSuccessContainer,
-      // isDark: true,
     );
   }
 }

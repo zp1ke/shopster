@@ -1,3 +1,5 @@
+import 'package:flutter/material.dart';
+
 class AppImage {
   AppImage._();
 
@@ -6,6 +8,14 @@ class AppImage {
   // app
   static const String lightLogo = '$_logosPath/splash-light.png';
   static const String darkLogo = '$_logosPath/splash-dark.png';
+
+  static String logo(BuildContext context) {
+    final brightness = MediaQuery.of(context).platformBrightness;
+    if (Brightness.light == brightness) {
+      return lightLogo;
+    }
+    return darkLogo;
+  }
 
   // social
   static const String google = '$_logosPath/google.png';

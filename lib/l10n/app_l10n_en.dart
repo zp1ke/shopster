@@ -28,5 +28,32 @@ class AppL10nEn extends AppL10n {
   String get onboardingDeliverySubtitle => 'From our doorstep to yours, your order is on its way - Swift, secure and contactless delivery!';
 
   @override
-  String get skip => 'Skip';
+  String get onboardingSkip => 'Skip';
+
+  @override
+  String get signInTitle => 'Welcome Back';
+
+  @override
+  String get signInSubtitle => 'Discover limitless choices and unmatched convenience';
+
+  @override
+  String get signInEmail => 'Email';
+
+  @override
+  String get signInPassword => 'Password';
+
+  @override
+  String get signInAction => 'Sign In';
+
+  @override
+  String get signInRememberMe => 'Remember me';
+
+  @override
+  String get signInForgotPassword => 'Forgot Password?';
+
+  @override
+  String get signInOrDivider => 'or Sign In with';
+
+  @override
+  String get signUpAction => 'Sign Up';
 }

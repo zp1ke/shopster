@@ -16,9 +16,11 @@ class OnBoardingPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final screenSize = MediaQuery.of(context).size;
+    final textTheme = Theme.of(context).textTheme;
     return Padding(
       padding: const EdgeInsets.all(AppSize.defaultSpacing),
       child: Column(
+        spacing: AppSize.itemSpacing,
         children: [
           Image(
             image: AssetImage(image),
@@ -27,13 +29,12 @@ class OnBoardingPage extends StatelessWidget {
           ),
           Text(
             title,
-            style: Theme.of(context).textTheme.headlineMedium,
+            style: textTheme.headlineMedium,
             textAlign: TextAlign.center,
           ),
-          SizedBox(height: AppSize.itemSpacing),
           Text(
             subtitle,
-            style: Theme.of(context).textTheme.bodyMedium,
+            style: textTheme.bodyMedium,
             textAlign: TextAlign.center,
           ),
         ],
