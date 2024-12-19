@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:shopster/utils/theme/theme.dart';
+import 'package:shopster/common/styles/theme.dart';
 
 class App extends StatelessWidget {
   const App({super.key});

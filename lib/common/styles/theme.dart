@@ -1,7 +1,7 @@
 import 'package:flex_color_scheme/flex_color_scheme.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:shopster/utils/theme/extension.dart';
+import 'package:shopster/common/styles/theme_extension.dart';
 
 class AppTheme {
   AppTheme._();
