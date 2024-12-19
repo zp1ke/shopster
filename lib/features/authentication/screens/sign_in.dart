@@ -4,6 +4,10 @@ import 'package:get/get.dart';
 class SignInScreen extends StatelessWidget {
   static const path = '/sign-in';
 
+  static GetPage route() {
+    return GetPage(name: path, page: () => SignInScreen());
+  }
+
   const SignInScreen({super.key});
 
   @override
@@ -12,13 +16,6 @@ class SignInScreen extends StatelessWidget {
       body: Center(
         child: Text('TODO sign-in screen'),
       ),
-    );
-  }
-
-  static GetPage route() {
-    return GetPage(
-      name: path,
-      page: () => SignInScreen(),
     );
   }
 }

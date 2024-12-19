@@ -11,13 +11,15 @@ dependencies:
   flex_color_scheme: ^8.0.2
   flutter:
     sdk: flutter
+  flutter_localizations:
+    sdk: flutter
   flutter_native_splash: ^2.4.3
   font_awesome_flutter: ^10.8.0
   get: ^4.6.6
   get_storage: ^2.1.1
   google_fonts: ^6.2.1
   http: ^1.2.2
-  intl: ^0.20.1
+  intl: any
   logger: ^2.5.0
   smooth_page_indicator: ^1.2.0+3
   url_launcher: ^6.3.1
@@ -28,8 +30,9 @@ dev_dependencies:
     sdk: flutter
 
 flutter:
-  uses-material-design: true
   assets:
     - assets/fonts/
     - assets/logos/
     - assets/images/on_boarding/
+  generate: true
+  uses-material-design: true
