@@ -32,28 +32,25 @@ class VerifyEmailScreen extends StatelessWidget {
         ],
       ),
       body: PageBoxWidget(
-        child: SingleChildScrollView(
-          padding: EdgeInsets.all(AppSize.defaultSpacing),
-          child: Column(
-            spacing: AppSize.itemSpacing,
-            children: [
-              ImageTextWidget(
-                image: AppImage.signUpVerify,
-                title: appL10n.signUpVerifyEmailTitle,
-                subtitle: 'todo@mail.com',
-                // TODO: replace with real email
-                subtitleStyle: textTheme.labelLarge,
-                padding: EdgeInsets.zero,
-              ),
-              Text(
-                appL10n.signUpVerifyEmailSubtitle,
-                style: textTheme.labelMedium,
-                textAlign: TextAlign.center,
-              ),
-              continueButton(context),
-              resendEmailButton(context),
-            ],
-          ),
+        child: Column(
+          spacing: AppSize.itemSpacing,
+          children: [
+            ImageTextWidget(
+              image: AppImage.signUpVerify,
+              title: appL10n.signUpVerifyEmailTitle,
+              subtitle: 'todo@mail.com',
+              // TODO: replace with real email
+              subtitleStyle: textTheme.labelLarge,
+              padding: EdgeInsets.zero,
+            ),
+            Text(
+              appL10n.signUpVerifyEmailSubtitle,
+              style: textTheme.labelMedium,
+              textAlign: TextAlign.center,
+            ),
+            continueButton(context),
+            resendEmailButton(context),
+          ],
         ),
       ),
     );
@@ -72,7 +69,9 @@ class VerifyEmailScreen extends StatelessWidget {
     return SizedBox(
       width: double.infinity,
       child: FilledButton(
-        onPressed: () {},
+        onPressed: () {
+          Get.toNamed(SignUpSuccessScreen.path);
+        },
         child: Text(AppL10n.of(context).signUpVerifyContinue),
       ),
     );
@@ -82,9 +81,7 @@ class VerifyEmailScreen extends StatelessWidget {
     return SizedBox(
       width: double.infinity,
       child: TextButton(
-        onPressed: () {
-          Get.toNamed(SignUpSuccessScreen.path);
-        },
+        onPressed: () {},
         child: Text(AppL10n.of(context).signUpVerifyResendEmail),
       ),
     );

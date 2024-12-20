@@ -23,27 +23,25 @@ class SignInScreen extends StatelessWidget {
     final appL10n = AppL10n.of(context);
     return Scaffold(
       body: PageBoxWidget(
-        child: SingleChildScrollView(
-          padding: EdgeInsets.symmetric(
-            horizontal: AppSize.defaultSpacing,
-            vertical: AppSize.itemSpacing,
-          ),
-          child: Column(
-            spacing: AppSize.defaultSpacing,
-            children: [
-              LogoHeaderWidget(
-                title: appL10n.signInTitle,
-                subtitle: appL10n.signInSubtitle,
-              ),
-              SignInForm(),
-              signUpButton(context),
-              TextDividerWidget(
-                padding: EdgeInsets.all(AppSize.itemSpacing),
-                text: appL10n.signInOrDivider,
-              ),
-              SocialSignInWidget(),
-            ],
-          ),
+        padding: EdgeInsets.symmetric(
+          horizontal: AppSize.defaultSpacing,
+          vertical: AppSize.itemSpacing,
+        ),
+        child: Column(
+          spacing: AppSize.defaultSpacing,
+          children: [
+            LogoHeaderWidget(
+              title: appL10n.signInTitle,
+              subtitle: appL10n.signInSubtitle,
+            ),
+            SignInForm(),
+            signUpButton(context),
+            TextDividerWidget(
+              padding: EdgeInsets.all(AppSize.itemSpacing),
+              text: appL10n.signInOrDivider,
+            ),
+            SocialSignInWidget(),
+          ],
         ),
       ),
     );

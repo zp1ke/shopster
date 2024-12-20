@@ -19,6 +19,7 @@ class OnBoardingScreen extends StatelessWidget {
     final pages = buildPages(context);
     return Scaffold(
       body: PageBoxWidget(
+        scrollable: false,
         child: Stack(
           children: [
             PageView(

@@ -27,20 +27,17 @@ class SignUpSuccessScreen extends StatelessWidget {
         title: LogoHero(height: AppSize.logoAppbarSize),
       ),
       body: PageBoxWidget(
-        child: SingleChildScrollView(
-          padding: EdgeInsets.all(AppSize.defaultSpacing),
-          child: Column(
-            spacing: AppSize.itemSpacing,
-            children: [
-              ImageTextWidget(
-                image: AppImage.signUpSuccess,
-                title: appL10n.signUpSuccessTitle,
-                subtitle: appL10n.signUpSuccessSubtitle,
-                subtitleStyle: textTheme.labelMedium,
-              ),
-              continueButton(context),
-            ],
-          ),
+        child: Column(
+          spacing: AppSize.itemSpacing,
+          children: [
+            ImageTextWidget(
+              image: AppImage.signUpSuccess,
+              title: appL10n.signUpSuccessTitle,
+              subtitle: appL10n.signUpSuccessSubtitle,
+              subtitleStyle: textTheme.labelMedium,
+            ),
+            continueButton(context),
+          ],
         ),
       ),
     );

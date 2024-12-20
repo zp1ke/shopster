@@ -26,26 +26,23 @@ class SignUpScreen extends StatelessWidget {
         title: LogoHero(height: AppSize.logoAppbarSize),
       ),
       body: PageBoxWidget(
-        child: SingleChildScrollView(
-          padding: EdgeInsets.all(AppSize.defaultSpacing),
-          child: Column(
-            spacing: AppSize.defaultSpacing,
-            children: [
-              Text(
-                appL10n.signUpTitle,
-                style: Theme.of(context).textTheme.headlineMedium,
-                textAlign: TextAlign.end,
-              ),
-              SignUpForm(onSignUp: () {
-                Get.toNamed(VerifyEmailScreen.path);
-              }),
-              TextDividerWidget(
-                padding: EdgeInsets.all(AppSize.itemSpacing),
-                text: appL10n.signUpOrDivider,
-              ),
-              SocialSignInWidget(),
-            ],
-          ),
+        child: Column(
+          spacing: AppSize.defaultSpacing,
+          children: [
+            Text(
+              appL10n.signUpTitle,
+              style: Theme.of(context).textTheme.headlineMedium,
+              textAlign: TextAlign.end,
+            ),
+            SignUpForm(onSignUp: () {
+              Get.toNamed(VerifyEmailScreen.path);
+            }),
+            TextDividerWidget(
+              padding: EdgeInsets.all(AppSize.itemSpacing),
+              text: appL10n.signUpOrDivider,
+            ),
+            SocialSignInWidget(),
+          ],
         ),
       ),
     );
