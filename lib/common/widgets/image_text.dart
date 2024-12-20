@@ -1,32 +1,31 @@
 import 'package:flutter/material.dart';
 import 'package:shopster/common/styles/sizes.dart';
 
-class OnBoardingPage extends StatelessWidget {
+class ImageTextWidget extends StatelessWidget {
   final String image;
   final String title;
   final String subtitle;
+  final EdgeInsets? padding;
+  final TextStyle? subtitleStyle;
 
-  const OnBoardingPage({
+  const ImageTextWidget({
     super.key,
     required this.image,
     required this.title,
     required this.subtitle,
+    this.padding,
+    this.subtitleStyle,
   });
 
   @override
   Widget build(BuildContext context) {
-    final screenSize = MediaQuery.of(context).size;
     final textTheme = Theme.of(context).textTheme;
     return Padding(
-      padding: const EdgeInsets.all(AppSize.defaultSpacing),
+      padding: padding ?? const EdgeInsets.all(AppSize.defaultSpacing),
       child: Column(
         spacing: AppSize.itemSpacing,
         children: [
-          Image(
-            image: AssetImage(image),
-            width: screenSize.width * 0.8,
-            height: screenSize.height * 0.6,
-          ),
+          Image(image: AssetImage(image)),
           Text(
             title,
             style: textTheme.headlineMedium,
@@ -34,7 +33,7 @@ class OnBoardingPage extends StatelessWidget {
           ),
           Text(
             subtitle,
-            style: textTheme.bodyMedium,
+            style: subtitleStyle ?? textTheme.bodyMedium,
             textAlign: TextAlign.center,
           ),
         ],

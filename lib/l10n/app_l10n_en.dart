@@ -86,4 +86,16 @@ class AppL10nEn extends AppL10n {
 
   @override
   String get signUpOrDivider => 'or Sign Up with';
+
+  @override
+  String get signUpVerifyEmailTitle => 'Verify your Email';
+
+  @override
+  String get signUpVerifyEmailSubtitle => 'Your account has been created successfully. Please verify your email address to complete the registration process.';
+
+  @override
+  String get signUpVerifyContinue => 'Continue';
+
+  @override
+  String get signUpVerifyResendEmail => 'Resend Email';
 }

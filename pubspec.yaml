@@ -34,5 +34,6 @@ flutter:
     - assets/fonts/
     - assets/logos/
     - assets/images/on_boarding/
+    - assets/images/sign_up/
   generate: true
   uses-material-design: true

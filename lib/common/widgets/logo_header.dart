@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:shopster/common/images.dart';
 import 'package:shopster/common/styles/sizes.dart';
+import 'package:shopster/common/widgets/logo_hero.dart';
 
 class LogoHeaderWidget extends StatelessWidget {
   final String title;
@@ -21,13 +21,7 @@ class LogoHeaderWidget extends StatelessWidget {
       spacing: AppSize.itemSpacing,
       crossAxisAlignment: CrossAxisAlignment.end,
       children: [
-        Hero(
-          tag: 'logo-header',
-          child: Image(
-            height: logoSize ?? AppSize.logoSize,
-            image: AssetImage(AppImage.logo(context)),
-          ),
-        ),
+        LogoHero(height: logoSize),
         Text(
           title,
           style: textTheme.headlineMedium,

@@ -1,3 +1,5 @@
+import 'package:flutter/material.dart';
+
 class AppSize {
   AppSize._();
 
@@ -27,6 +29,7 @@ class AppSize {
   // images
   static const double thumbSize = 80.0;
   static const double logoSize = 120.0;
+  static const double logoAppbarSize = kToolbarHeight * 0.8;
 
   // spacing
   static const double defaultSpacing = 24.0;

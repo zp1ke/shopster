@@ -7,7 +7,12 @@ import 'package:shopster/common/widgets/phone_field.dart';
 import 'package:shopster/l10n/app_l10n.dart';
 
 class SignUpForm extends StatelessWidget {
-  const SignUpForm({super.key});
+  final VoidCallback onSignUp;
+
+  const SignUpForm({
+    super.key,
+    required this.onSignUp,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -84,7 +89,7 @@ class SignUpForm extends StatelessWidget {
     return SizedBox(
       width: double.infinity,
       child: FilledButton(
-        onPressed: () {},
+        onPressed: onSignUp,
         child: Text(AppL10n.of(context).signUpAction),
       ),
     );

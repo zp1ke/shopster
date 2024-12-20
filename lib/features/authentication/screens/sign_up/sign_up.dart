@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:shopster/common/images.dart';
 import 'package:shopster/common/styles/sizes.dart';
+import 'package:shopster/common/widgets/logo_hero.dart';
 import 'package:shopster/common/widgets/page_box.dart';
 import 'package:shopster/common/widgets/text_divider.dart';
 import 'package:shopster/features/authentication/screens/sign_up/form.dart';
+import 'package:shopster/features/authentication/screens/sign_up/verify_email.dart';
 import 'package:shopster/features/authentication/widgets/social_sign_in.dart';
 import 'package:shopster/l10n/app_l10n.dart';
 
@@ -22,17 +23,11 @@ class SignUpScreen extends StatelessWidget {
     final appL10n = AppL10n.of(context);
     return Scaffold(
       appBar: AppBar(
-        title: Hero(
-          tag: 'logo-header',
-          child: Image(
-            height: kToolbarHeight * 0.8,
-            image: AssetImage(AppImage.logo(context)),
-          ),
-        ),
+        title: LogoHero(height: AppSize.logoAppbarSize),
       ),
-      body: SingleChildScrollView(
-        padding: EdgeInsets.all(AppSize.defaultSpacing),
-        child: PageBoxWidget(
+      body: PageBoxWidget(
+        child: SingleChildScrollView(
+          padding: EdgeInsets.all(AppSize.defaultSpacing),
           child: Column(
             spacing: AppSize.defaultSpacing,
             children: [
@@ -41,7 +36,9 @@ class SignUpScreen extends StatelessWidget {
                 style: Theme.of(context).textTheme.headlineMedium,
                 textAlign: TextAlign.end,
               ),
-              SignUpForm(),
+              SignUpForm(onSignUp: () {
+                Get.toNamed(VerifyEmailScreen.path);
+              }),
               TextDividerWidget(
                 padding: EdgeInsets.all(AppSize.itemSpacing),
                 text: appL10n.signUpOrDivider,

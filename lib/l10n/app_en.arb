@@ -25,5 +25,9 @@
   "signUpIAgree": "I agree to",
   "signUpTermsAndConditions": "Terms and Privacy Policy",
   "signUpAction": "Sign Up",
-  "signUpOrDivider": "or Sign Up with"
+  "signUpOrDivider": "or Sign Up with",
+  "signUpVerifyEmailTitle": "Verify your Email",
+  "signUpVerifyEmailSubtitle": "Your account has been created successfully. Please verify your email address to complete the registration process.",
+  "signUpVerifyContinue": "Continue",
+  "signUpVerifyResendEmail": "Resend Email"
 }

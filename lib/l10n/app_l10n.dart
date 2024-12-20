@@ -254,6 +254,30 @@ abstract class AppL10n {
   /// In en, this message translates to:
   /// **'or Sign Up with'**
   String get signUpOrDivider;
+
+  /// No description provided for @signUpVerifyEmailTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Verify your Email'**
+  String get signUpVerifyEmailTitle;
+
+  /// No description provided for @signUpVerifyEmailSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Your account has been created successfully. Please verify your email address to complete the registration process.'**
+  String get signUpVerifyEmailSubtitle;
+
+  /// No description provided for @signUpVerifyContinue.
+  ///
+  /// In en, this message translates to:
+  /// **'Continue'**
+  String get signUpVerifyContinue;
+
+  /// No description provided for @signUpVerifyResendEmail.
+  ///
+  /// In en, this message translates to:
+  /// **'Resend Email'**
+  String get signUpVerifyResendEmail;
 }
 
 class _AppL10nDelegate extends LocalizationsDelegate<AppL10n> {

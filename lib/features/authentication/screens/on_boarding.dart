@@ -3,8 +3,9 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 import 'package:shopster/common/images.dart';
 import 'package:shopster/common/styles/sizes.dart';
+import 'package:shopster/common/widgets/image_text.dart';
+import 'package:shopster/common/widgets/page_box.dart';
 import 'package:shopster/features/authentication/controllers/on_boarding.dart';
-import 'package:shopster/features/authentication/screens/on_boarding/page.dart';
 import 'package:shopster/features/authentication/screens/sign_in/sign_in.dart';
 import 'package:shopster/l10n/app_l10n.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
@@ -17,38 +18,47 @@ class OnBoardingScreen extends StatelessWidget {
     final controller = Get.put(OnboardingController());
     final pages = buildPages(context);
     return Scaffold(
-      body: Stack(
-        children: [
-          PageView(
-            controller: controller.pageController,
-            onPageChanged: controller.updatePageIndicator,
-            children: pages,
-          ),
-          Obx(() => skipButton(context, pages.length)),
-          navigation(pages.length),
-          nextButton(pages.length),
-        ],
+      body: PageBoxWidget(
+        child: Stack(
+          children: [
+            PageView(
+              controller: controller.pageController,
+              onPageChanged: controller.updatePageIndicator,
+              children: pages,
+            ),
+            Obx(() => skipButton(context, pages.length)),
+            navigation(pages.length),
+            nextButton(pages.length),
+          ],
+        ),
       ),
     );
   }
 
-  List<OnBoardingPage> buildPages(BuildContext context) {
+  List<ImageTextWidget> buildPages(BuildContext context) {
     final app1l0n = AppL10n.of(context);
-    return <OnBoardingPage>[
-      OnBoardingPage(
+    final padding = EdgeInsets.symmetric(
+      vertical: AppSize.sectionSpacing * 2,
+      horizontal: AppSize.defaultSpacing,
+    );
+    return <ImageTextWidget>[
+      ImageTextWidget(
         image: AppImage.onboardingSearching,
         title: app1l0n.onboardingSearchingTitle,
         subtitle: app1l0n.onboardingSearchingSubtitle,
+        padding: padding,
       ),
-      OnBoardingPage(
+      ImageTextWidget(
         image: AppImage.onboardingShopping,
         title: app1l0n.onboardingShoppingTitle,
         subtitle: app1l0n.onboardingShoppingSubtitle,
+        padding: padding,
       ),
-      OnBoardingPage(
+      ImageTextWidget(
         image: AppImage.onboardingDelivery,
         title: app1l0n.onboardingDeliveryTitle,
         subtitle: app1l0n.onboardingDeliverySubtitle,
+        padding: padding,
       ),
     ];
   }

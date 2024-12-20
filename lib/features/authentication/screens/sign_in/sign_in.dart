@@ -22,12 +22,12 @@ class SignInScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final appL10n = AppL10n.of(context);
     return Scaffold(
-      body: SingleChildScrollView(
-        padding: EdgeInsets.symmetric(
-          horizontal: AppSize.defaultSpacing,
-          vertical: AppSize.itemSpacing,
-        ),
-        child: PageBoxWidget(
+      body: PageBoxWidget(
+        child: SingleChildScrollView(
+          padding: EdgeInsets.symmetric(
+            horizontal: AppSize.defaultSpacing,
+            vertical: AppSize.itemSpacing,
+          ),
           child: Column(
             spacing: AppSize.defaultSpacing,
             children: [
