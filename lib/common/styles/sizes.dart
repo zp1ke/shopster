@@ -25,8 +25,8 @@ class AppSize {
   static const double buttonRadius = 10.0;
 
   // images
-  static const double imageThumbSize = 80.0;
-  static const double logoSize = 150.0;
+  static const double thumbSize = 80.0;
+  static const double logoSize = 120.0;
 
   // spacing
   static const double defaultSpacing = 24.0;

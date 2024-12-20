@@ -61,5 +61,29 @@ class AppL10nEn extends AppL10n {
   String get signInOrDivider => 'or Sign In with';
 
   @override
+  String get signUpTitle => 'Let\'s create your Account';
+
+  @override
+  String get signUpName => 'Full Name';
+
+  @override
+  String get signUpEnterName => 'Enter your full name';
+
+  @override
+  String get signUpPhone => 'Phone';
+
+  @override
+  String get signUpEnterPhone => 'Enter your phone';
+
+  @override
+  String get signUpIAgree => 'I agree to';
+
+  @override
+  String get signUpTermsAndConditions => 'Terms and Privacy Policy';
+
+  @override
   String get signUpAction => 'Sign Up';
+
+  @override
+  String get signUpOrDivider => 'or Sign Up with';
 }

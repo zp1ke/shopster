@@ -5,6 +5,7 @@ import 'package:shopster/common/widgets/logo_header.dart';
 import 'package:shopster/common/widgets/page_box.dart';
 import 'package:shopster/common/widgets/text_divider.dart';
 import 'package:shopster/features/authentication/screens/sign_in/form.dart';
+import 'package:shopster/features/authentication/screens/sign_up/sign_up.dart';
 import 'package:shopster/features/authentication/widgets/social_sign_in.dart';
 import 'package:shopster/l10n/app_l10n.dart';
 
@@ -22,7 +23,10 @@ class SignInScreen extends StatelessWidget {
     final appL10n = AppL10n.of(context);
     return Scaffold(
       body: SingleChildScrollView(
-        padding: EdgeInsets.all(AppSize.defaultSpacing),
+        padding: EdgeInsets.symmetric(
+          horizontal: AppSize.defaultSpacing,
+          vertical: AppSize.itemSpacing,
+        ),
         child: PageBoxWidget(
           child: Column(
             spacing: AppSize.defaultSpacing,
@@ -32,6 +36,7 @@ class SignInScreen extends StatelessWidget {
                 subtitle: appL10n.signInSubtitle,
               ),
               SignInForm(),
+              signUpButton(context),
               TextDividerWidget(
                 padding: EdgeInsets.all(AppSize.itemSpacing),
                 text: appL10n.signInOrDivider,
@@ -40,6 +45,18 @@ class SignInScreen extends StatelessWidget {
             ],
           ),
         ),
+      ),
+    );
+  }
+
+  Widget signUpButton(BuildContext context) {
+    return SizedBox(
+      width: double.infinity,
+      child: OutlinedButton(
+        onPressed: () {
+          Get.toNamed(SignUpScreen.path);
+        },
+        child: Text(AppL10n.of(context).signUpAction),
       ),
     );
   }

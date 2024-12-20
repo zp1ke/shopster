@@ -17,5 +17,13 @@
   "signInRememberMe": "Remember me",
   "signInForgotPassword": "Forgot Password?",
   "signInOrDivider": "or Sign In with",
-  "signUpAction": "Sign Up"
+  "signUpTitle": "Let's create your Account",
+  "signUpName": "Full Name",
+  "signUpEnterName": "Enter your full name",
+  "signUpPhone": "Phone",
+  "signUpEnterPhone": "Enter your phone",
+  "signUpIAgree": "I agree to",
+  "signUpTermsAndConditions": "Terms and Privacy Policy",
+  "signUpAction": "Sign Up",
+  "signUpOrDivider": "or Sign Up with"
 }

@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:shopster/common/styles/sizes.dart';
 import 'package:shopster/common/widgets/email_field.dart';
 import 'package:shopster/common/widgets/password_field.dart';
+import 'package:shopster/common/widgets/phone_field.dart';
 import 'package:shopster/l10n/app_l10n.dart';
 
-class SignInForm extends StatelessWidget {
-  const SignInForm({super.key});
+class SignUpForm extends StatelessWidget {
+  const SignUpForm({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -14,32 +16,43 @@ class SignInForm extends StatelessWidget {
       child: Column(
         spacing: AppSize.itemSpacing,
         children: [
+          nameField(context),
           EmailField(
             labelText: appL10n.signInEmail,
             hintText: appL10n.signInEnterEmail,
+          ),
+          PhoneField(
+            labelText: appL10n.signUpPhone,
+            hintText: appL10n.signUpEnterPhone,
           ),
           PasswordField(
             labelText: appL10n.signInPassword,
             hintText: appL10n.signInEnterPassword,
           ),
-          rememberMeForgotPassword(context),
-          signInButton(context),
+          termsAndConditions(context),
+          signUpButton(context),
         ],
       ),
     );
   }
 
-  Widget rememberMeForgotPassword(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [
-        rememberMeSwitch(context),
-        forgotPasswordButton(context),
-      ],
+  Widget nameField(BuildContext context) {
+    final appL10n = AppL10n.of(context);
+    return TextFormField(
+      expands: false,
+      decoration: InputDecoration(
+        prefixIcon: Icon(
+          FontAwesomeIcons.user,
+          size: AppSize.iconXs,
+        ),
+        labelText: appL10n.signUpName,
+        hintText: appL10n.signUpEnterName,
+      ),
     );
   }
 
-  Widget rememberMeSwitch(BuildContext context) {
+  Widget termsAndConditions(BuildContext context) {
+    final appL10n = AppL10n.of(context);
     return Row(
       spacing: AppSize.itemSpacing,
       children: [
@@ -48,7 +61,14 @@ class SignInForm extends StatelessWidget {
           height: AppSize.defaultSpacing,
           child: Checkbox(value: true, onChanged: (value) {}),
         ),
-        Text(AppL10n.of(context).signInRememberMe),
+        Text(appL10n.signUpIAgree),
+        TextButton(
+          onPressed: () {},
+          style: TextButton.styleFrom(
+            padding: EdgeInsets.zero,
+          ),
+          child: Text(appL10n.signUpTermsAndConditions),
+        ),
       ],
     );
   }
@@ -60,12 +80,12 @@ class SignInForm extends StatelessWidget {
     );
   }
 
-  Widget signInButton(BuildContext context) {
+  Widget signUpButton(BuildContext context) {
     return SizedBox(
       width: double.infinity,
       child: FilledButton(
         onPressed: () {},
-        child: Text(AppL10n.of(context).signInAction),
+        child: Text(AppL10n.of(context).signUpAction),
       ),
     );
   }

@@ -4,12 +4,14 @@ import 'package:shopster/common/styles/sizes.dart';
 
 class LogoHeaderWidget extends StatelessWidget {
   final String title;
-  final String subtitle;
+  final String? subtitle;
+  final double? logoSize;
 
   const LogoHeaderWidget({
     super.key,
     required this.title,
-    required this.subtitle,
+    this.subtitle,
+    this.logoSize,
   });
 
   @override
@@ -19,18 +21,24 @@ class LogoHeaderWidget extends StatelessWidget {
       spacing: AppSize.itemSpacing,
       crossAxisAlignment: CrossAxisAlignment.end,
       children: [
-        Image(
-          height: AppSize.logoSize,
-          image: AssetImage(AppImage.logo(context)),
+        Hero(
+          tag: 'logo-header',
+          child: Image(
+            height: logoSize ?? AppSize.logoSize,
+            image: AssetImage(AppImage.logo(context)),
+          ),
         ),
         Text(
           title,
           style: textTheme.headlineMedium,
+          textAlign: TextAlign.end,
         ),
-        Text(
-          subtitle,
-          style: textTheme.bodyMedium,
-        ),
+        if (subtitle != null)
+          Text(
+            subtitle!,
+            style: textTheme.bodyMedium,
+            textAlign: TextAlign.end,
+          ),
       ],
     );
   }

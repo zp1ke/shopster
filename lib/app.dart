@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:shopster/common/styles/theme.dart';
 import 'package:shopster/features/authentication/screens/on_boarding/on_boarding.dart';
 import 'package:shopster/features/authentication/screens/sign_in/sign_in.dart';
+import 'package:shopster/features/authentication/screens/sign_up/sign_up.dart';
 import 'package:shopster/l10n/app_l10n.dart';
 
 class App extends StatelessWidget {
@@ -20,6 +21,7 @@ class App extends StatelessWidget {
       home: OnBoardingScreen(),
       getPages: [
         SignInScreen.route(),
+        SignUpScreen.route(),
       ],
     );
   }

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:shopster/common/styles/sizes.dart';
+import 'package:shopster/common/styles/theme_extension.dart';
 
 class SocialSignInWidget extends StatelessWidget {
   const SocialSignInWidget({super.key});
@@ -11,23 +12,29 @@ class SocialSignInWidget extends StatelessWidget {
       spacing: AppSize.itemSpacing,
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        googleButton(),
-        facebookButton(),
+        googleButton(context),
+        facebookButton(context),
       ],
     );
   }
 
-  Widget googleButton() {
+  Widget googleButton(BuildContext context) {
     return IconButton.outlined(
       onPressed: () {},
-      icon: FaIcon(FontAwesomeIcons.google),
+      icon: FaIcon(
+        FontAwesomeIcons.google,
+        color: AppThemeColors.of(context).google,
+      ),
     );
   }
 
-  Widget facebookButton() {
+  Widget facebookButton(BuildContext context) {
     return IconButton.outlined(
       onPressed: () {},
-      icon: FaIcon(FontAwesomeIcons.facebook),
+      icon: FaIcon(
+        FontAwesomeIcons.facebook,
+        color: AppThemeColors.of(context).facebook,
+      ),
     );
   }
 }

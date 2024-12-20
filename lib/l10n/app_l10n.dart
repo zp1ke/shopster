@@ -201,11 +201,59 @@ abstract class AppL10n {
   /// **'or Sign In with'**
   String get signInOrDivider;
 
+  /// No description provided for @signUpTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Let\'s create your Account'**
+  String get signUpTitle;
+
+  /// No description provided for @signUpName.
+  ///
+  /// In en, this message translates to:
+  /// **'Full Name'**
+  String get signUpName;
+
+  /// No description provided for @signUpEnterName.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter your full name'**
+  String get signUpEnterName;
+
+  /// No description provided for @signUpPhone.
+  ///
+  /// In en, this message translates to:
+  /// **'Phone'**
+  String get signUpPhone;
+
+  /// No description provided for @signUpEnterPhone.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter your phone'**
+  String get signUpEnterPhone;
+
+  /// No description provided for @signUpIAgree.
+  ///
+  /// In en, this message translates to:
+  /// **'I agree to'**
+  String get signUpIAgree;
+
+  /// No description provided for @signUpTermsAndConditions.
+  ///
+  /// In en, this message translates to:
+  /// **'Terms and Privacy Policy'**
+  String get signUpTermsAndConditions;
+
   /// No description provided for @signUpAction.
   ///
   /// In en, this message translates to:
   /// **'Sign Up'**
   String get signUpAction;
+
+  /// No description provided for @signUpOrDivider.
+  ///
+  /// In en, this message translates to:
+  /// **'or Sign Up with'**
+  String get signUpOrDivider;
 }
 
 class _AppL10nDelegate extends LocalizationsDelegate<AppL10n> {
