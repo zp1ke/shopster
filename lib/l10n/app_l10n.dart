@@ -278,6 +278,18 @@ abstract class AppL10n {
   /// In en, this message translates to:
   /// **'Resend Email'**
   String get signUpVerifyResendEmail;
+
+  /// No description provided for @signUpSuccessTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Your Account has been successfully created'**
+  String get signUpSuccessTitle;
+
+  /// No description provided for @signUpSuccessSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Your Account has been successfully created'**
+  String get signUpSuccessSubtitle;
 }
 
 class _AppL10nDelegate extends LocalizationsDelegate<AppL10n> {

@@ -98,4 +98,10 @@ class AppL10nEn extends AppL10n {
 
   @override
   String get signUpVerifyResendEmail => 'Resend Email';
+
+  @override
+  String get signUpSuccessTitle => 'Your Account has been successfully created';
+
+  @override
+  String get signUpSuccessSubtitle => 'Your Account has been successfully created';
 }

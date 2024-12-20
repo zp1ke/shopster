@@ -7,6 +7,7 @@ import 'package:shopster/common/widgets/image_text.dart';
 import 'package:shopster/common/widgets/logo_hero.dart';
 import 'package:shopster/common/widgets/page_box.dart';
 import 'package:shopster/features/authentication/screens/sign_in/sign_in.dart';
+import 'package:shopster/features/authentication/screens/sign_up/success.dart';
 import 'package:shopster/l10n/app_l10n.dart';
 
 class VerifyEmailScreen extends StatelessWidget {
@@ -81,7 +82,9 @@ class VerifyEmailScreen extends StatelessWidget {
     return SizedBox(
       width: double.infinity,
       child: TextButton(
-        onPressed: () {},
+        onPressed: () {
+          Get.toNamed(SignUpSuccessScreen.path);
+        },
         child: Text(AppL10n.of(context).signUpVerifyResendEmail),
       ),
     );

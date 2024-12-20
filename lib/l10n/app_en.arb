@@ -1,4 +1,5 @@
 {
+  "@@locale": "en",
   "appTitle": "Shopster",
   "onboardingSearchingTitle": "Choose your Product",
   "onboardingSearchingSubtitle": "Welcome to the world of limitless choices - Your perfect product is just a click away!",
@@ -29,5 +30,7 @@
   "signUpVerifyEmailTitle": "Verify your Email",
   "signUpVerifyEmailSubtitle": "Your account has been created successfully. Please verify your email address to complete the registration process.",
   "signUpVerifyContinue": "Continue",
-  "signUpVerifyResendEmail": "Resend Email"
+  "signUpVerifyResendEmail": "Resend Email",
+  "signUpSuccessTitle": "Your Account has been successfully created",
+  "signUpSuccessSubtitle": "Your Account has been successfully created"
 }

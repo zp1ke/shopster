@@ -26,4 +26,5 @@ class AppImage {
   // sign up
   static const String _signUpPath = 'assets/images/sign_up';
   static const String signUpVerify = '$_signUpPath/verify.png';
+  static const String signUpSuccess = '$_signUpPath/success.png';
 }
