@@ -4,7 +4,6 @@ import 'package:shopster/common/images.dart';
 import 'package:shopster/common/styles/sizes.dart';
 import 'package:shopster/common/widgets/icons.dart';
 import 'package:shopster/common/widgets/image_text.dart';
-import 'package:shopster/common/widgets/page_box.dart';
 import 'package:shopster/features/authentication/controllers/on_boarding.dart';
 import 'package:shopster/features/authentication/screens/sign_in/sign_in.dart';
 import 'package:shopster/l10n/app_l10n.dart';
@@ -24,21 +23,17 @@ class OnBoardingScreen extends StatelessWidget {
     final controller = Get.put(OnboardingController());
     final pages = buildPages(context);
     return Scaffold(
-      body: PageBoxWidget(
-        scrollable: false,
-        padding: EdgeInsets.zero,
-        child: Stack(
-          children: [
-            PageView(
-              controller: controller.pageController,
-              onPageChanged: controller.updatePageIndicator,
-              children: pages,
-            ),
-            Obx(() => skipButton(context, pages.length)),
-            navigation(pages.length),
-            nextButton(pages.length),
-          ],
-        ),
+      body: Stack(
+        children: [
+          PageView(
+            controller: controller.pageController,
+            onPageChanged: controller.updatePageIndicator,
+            children: pages,
+          ),
+          Obx(() => skipButton(context, pages.length)),
+          navigation(pages.length),
+          nextButton(pages.length),
+        ],
       ),
     );
   }
