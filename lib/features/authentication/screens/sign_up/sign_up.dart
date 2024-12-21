@@ -35,7 +35,7 @@ class SignUpScreen extends StatelessWidget {
               textAlign: TextAlign.end,
             ),
             SignUpForm(onSignUp: () {
-              Get.toNamed(VerifyEmailScreen.path);
+              Get.toNamed(SignUpVerifyScreen.path);
             }),
             TextDividerWidget(
               padding: EdgeInsets.all(AppSize.itemSpacing),

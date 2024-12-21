@@ -5,7 +5,12 @@ import 'package:shopster/common/widgets/password_field.dart';
 import 'package:shopster/l10n/app_l10n.dart';
 
 class SignInForm extends StatelessWidget {
-  const SignInForm({super.key});
+  final VoidCallback onForgotPassword;
+
+  const SignInForm({
+    super.key,
+    required this.onForgotPassword,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -55,7 +60,7 @@ class SignInForm extends StatelessWidget {
 
   Widget forgotPasswordButton(BuildContext context) {
     return TextButton(
-      onPressed: () {},
+      onPressed: onForgotPassword,
       child: Text(AppL10n.of(context).signInForgotPassword),
     );
   }

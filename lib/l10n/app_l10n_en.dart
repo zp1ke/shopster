@@ -58,6 +58,21 @@ class AppL10nEn extends AppL10n {
   String get signInForgotPassword => 'Forgot Password?';
 
   @override
+  String get signInResetPassword => 'Reset Password';
+
+  @override
+  String get signInResetPasswordSubtitle => 'Don\'t worry, we got you covered, enter your email and we will send you a link to reset your password';
+
+  @override
+  String get signInForgotPasswordSubmit => 'Submit';
+
+  @override
+  String get signInVerifyEmailTitle => 'Password Reset email sent';
+
+  @override
+  String get signInVerifyEmailSubtitle => 'Your account security is our priority. Please check your email for a password reset link.';
+
+  @override
   String get signInOrDivider => 'or Sign In with';
 
   @override

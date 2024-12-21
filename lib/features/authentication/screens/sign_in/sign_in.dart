@@ -4,6 +4,7 @@ import 'package:shopster/common/styles/sizes.dart';
 import 'package:shopster/common/widgets/logo_header.dart';
 import 'package:shopster/common/widgets/page_box.dart';
 import 'package:shopster/common/widgets/text_divider.dart';
+import 'package:shopster/features/authentication/screens/sign_in/forgot_password.dart';
 import 'package:shopster/features/authentication/screens/sign_in/form.dart';
 import 'package:shopster/features/authentication/screens/sign_up/sign_up.dart';
 import 'package:shopster/features/authentication/widgets/social_sign_in.dart';
@@ -34,7 +35,9 @@ class SignInScreen extends StatelessWidget {
               title: appL10n.signInTitle,
               subtitle: appL10n.signInSubtitle,
             ),
-            SignInForm(),
+            SignInForm(onForgotPassword: () {
+              Get.toNamed(ForgotPassword.path);
+            }),
             signUpButton(context),
             TextDividerWidget(
               padding: EdgeInsets.all(AppSize.itemSpacing),

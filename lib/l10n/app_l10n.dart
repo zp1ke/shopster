@@ -195,6 +195,36 @@ abstract class AppL10n {
   /// **'Forgot Password?'**
   String get signInForgotPassword;
 
+  /// No description provided for @signInResetPassword.
+  ///
+  /// In en, this message translates to:
+  /// **'Reset Password'**
+  String get signInResetPassword;
+
+  /// No description provided for @signInResetPasswordSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Don\'t worry, we got you covered, enter your email and we will send you a link to reset your password'**
+  String get signInResetPasswordSubtitle;
+
+  /// No description provided for @signInForgotPasswordSubmit.
+  ///
+  /// In en, this message translates to:
+  /// **'Submit'**
+  String get signInForgotPasswordSubmit;
+
+  /// No description provided for @signInVerifyEmailTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Password Reset email sent'**
+  String get signInVerifyEmailTitle;
+
+  /// No description provided for @signInVerifyEmailSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Your account security is our priority. Please check your email for a password reset link.'**
+  String get signInVerifyEmailSubtitle;
+
   /// No description provided for @signInOrDivider.
   ///
   /// In en, this message translates to:

@@ -5,18 +5,17 @@ import 'package:shopster/common/styles/sizes.dart';
 import 'package:shopster/common/widgets/logo_hero.dart';
 import 'package:shopster/common/widgets/page_box.dart';
 import 'package:shopster/features/authentication/screens/sign_in/sign_in.dart';
-import 'package:shopster/features/authentication/screens/sign_up/success.dart';
 import 'package:shopster/features/authentication/widgets/verify_email.dart';
 import 'package:shopster/l10n/app_l10n.dart';
 
-class SignUpVerifyScreen extends StatelessWidget {
-  static const path = '/sign-up-verify';
+class SignInVerifyScreen extends StatelessWidget {
+  static const path = '/sign-in-verify';
 
   static GetPage route() {
-    return GetPage(name: path, page: () => SignUpVerifyScreen());
+    return GetPage(name: path, page: () => SignInVerifyScreen());
   }
 
-  const SignUpVerifyScreen({super.key});
+  const SignInVerifyScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -31,10 +30,10 @@ class SignUpVerifyScreen extends StatelessWidget {
       ),
       body: PageBoxWidget(
         child: VerifyEmailWidget(
-          title: appL10n.signUpVerifyEmailTitle,
-          subtitle: appL10n.signUpVerifyEmailSubtitle,
+          title: appL10n.signInVerifyEmailTitle,
+          subtitle: appL10n.signInVerifyEmailSubtitle,
           onVerify: () {
-            Get.toNamed(SignUpSuccessScreen.path);
+            Get.offAllNamed(SignInScreen.path);
           },
           onResend: () {},
         ),
