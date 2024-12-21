@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:shopster/common/styles/sizes.dart';
-import 'package:shopster/common/widgets/email_field.dart';
 import 'package:shopster/common/widgets/icons.dart';
+import 'package:shopster/common/widgets/input/email_field.dart';
 import 'package:shopster/common/widgets/logo_hero.dart';
 import 'package:shopster/common/widgets/page_box.dart';
 import 'package:shopster/features/authentication/screens/sign_in/sign_in.dart';

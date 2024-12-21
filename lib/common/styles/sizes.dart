@@ -23,4 +23,5 @@ class AppSize {
   // sizes
   static const double pageMinWidth = 200.0;
   static const double pageMaxWidth = 500.0;
+  static const double shopHeaderSize = pageMaxWidth * 0.75;
 }

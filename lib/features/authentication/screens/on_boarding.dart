@@ -26,6 +26,7 @@ class OnBoardingScreen extends StatelessWidget {
     return Scaffold(
       body: PageBoxWidget(
         scrollable: false,
+        padding: EdgeInsets.zero,
         child: Stack(
           children: [
             PageView(

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:shopster/common/styles/sizes.dart';
-import 'package:shopster/common/widgets/email_field.dart';
 import 'package:shopster/common/widgets/icons.dart';
-import 'package:shopster/common/widgets/password_field.dart';
-import 'package:shopster/common/widgets/phone_field.dart';
+import 'package:shopster/common/widgets/input/email_field.dart';
+import 'package:shopster/common/widgets/input/password_field.dart';
+import 'package:shopster/common/widgets/input/phone_field.dart';
 import 'package:shopster/l10n/app_l10n.dart';
 
 class SignUpForm extends StatelessWidget {
