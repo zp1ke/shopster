@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 import 'package:shopster/common/images.dart';
 import 'package:shopster/common/styles/sizes.dart';
+import 'package:shopster/common/widgets/icons.dart';
 import 'package:shopster/common/widgets/image_text.dart';
 import 'package:shopster/common/widgets/page_box.dart';
 import 'package:shopster/features/authentication/controllers/on_boarding.dart';
@@ -11,6 +11,12 @@ import 'package:shopster/l10n/app_l10n.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class OnBoardingScreen extends StatelessWidget {
+  static const path = '/on-boarding';
+
+  static GetPage route() {
+    return GetPage(name: path, page: () => OnBoardingScreen());
+  }
+
   const OnBoardingScreen({super.key});
 
   @override
@@ -104,7 +110,7 @@ class OnBoardingScreen extends StatelessWidget {
                 .movePageIndicator(OnboardingController.I.pageIndex + 1);
           }
         },
-        child: FaIcon(FontAwesomeIcons.arrowRight),
+        child: const Icon(AppIcons.arrowRightFilled),
       ),
     );
   }

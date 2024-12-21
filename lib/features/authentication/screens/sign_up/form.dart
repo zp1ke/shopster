@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:shopster/common/styles/sizes.dart';
 import 'package:shopster/common/widgets/email_field.dart';
+import 'package:shopster/common/widgets/icons.dart';
 import 'package:shopster/common/widgets/password_field.dart';
 import 'package:shopster/common/widgets/phone_field.dart';
 import 'package:shopster/l10n/app_l10n.dart';
@@ -46,8 +46,8 @@ class SignUpForm extends StatelessWidget {
     return TextFormField(
       expands: false,
       decoration: InputDecoration(
-        prefixIcon: Icon(
-          FontAwesomeIcons.user,
+        prefixIcon: const Icon(
+          AppIcons.userFilled,
           size: AppSize.iconXs,
         ),
         labelText: appL10n.signUpName,

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 import 'package:shopster/common/styles/sizes.dart';
+import 'package:shopster/common/widgets/icons.dart';
 import 'package:shopster/common/widgets/logo_hero.dart';
 import 'package:shopster/common/widgets/page_box.dart';
 import 'package:shopster/features/authentication/screens/sign_in/sign_in.dart';
@@ -46,7 +46,7 @@ class SignInVerifyScreen extends StatelessWidget {
       onPressed: () {
         Get.offAllNamed(SignInScreen.path);
       },
-      icon: const FaIcon(FontAwesomeIcons.xmark),
+      icon: const Icon(AppIcons.closeFilled),
     );
   }
 }

@@ -5,10 +5,12 @@ import 'package:shopster/common/widgets/password_field.dart';
 import 'package:shopster/l10n/app_l10n.dart';
 
 class SignInForm extends StatelessWidget {
+  final VoidCallback onSignIn;
   final VoidCallback onForgotPassword;
 
   const SignInForm({
     super.key,
+    required this.onSignIn,
     required this.onForgotPassword,
   });
 
@@ -69,7 +71,7 @@ class SignInForm extends StatelessWidget {
     return SizedBox(
       width: double.infinity,
       child: FilledButton(
-        onPressed: () {},
+        onPressed: onSignIn,
         child: Text(AppL10n.of(context).signInAction),
       ),
     );

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:shopster/common/styles/sizes.dart';
+import 'package:shopster/common/widgets/icons.dart';
 
 class PhoneField extends StatelessWidget {
   final String? labelText;
@@ -16,7 +16,7 @@ class PhoneField extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextFormField(
       decoration: InputDecoration(
-        prefixIcon: Icon(FontAwesomeIcons.phone, size: AppSize.iconXs),
+        prefixIcon: const Icon(AppIcons.phoneFilled, size: AppSize.iconXs),
         labelText: labelText,
         hintText: hintText,
       ),
