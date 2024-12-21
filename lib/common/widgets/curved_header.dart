@@ -3,11 +3,13 @@ import 'package:shopster/common/styles/sizes.dart';
 
 class CurvedHeader extends StatelessWidget {
   final double height;
+  final Color backgroundColor;
   final Widget child;
 
   const CurvedHeader({
     super.key,
     this.height = AppSize.shopHeaderSize,
+    required this.backgroundColor,
     required this.child,
   });
 
@@ -16,7 +18,7 @@ class CurvedHeader extends StatelessWidget {
     return ClipPath(
       clipper: _CurvedEdges(),
       child: Container(
-        color: Theme.of(context).primaryColor,
+        color: backgroundColor,
         child: SizedBox(
           height: height,
           child: child,

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:shopster/common/widgets/icons.dart';
 import 'package:shopster/common/widgets/page_box.dart';
 import 'package:shopster/features/shop/models/page.dart';
+import 'package:shopster/features/shop/screens/home/appbar.dart';
 import 'package:shopster/features/shop/widgets/shop_header.dart';
 import 'package:shopster/l10n/app_l10n.dart';
 
@@ -29,8 +30,10 @@ class _HomeScreen extends StatelessWidget {
       child: Column(
         children: [
           ShopHeaderWidget(
-            child: Center(
-              child: Text('HEADER TODO'),
+            child: Column(
+              children: [
+                HomeAppbar(),
+              ],
             ),
           ),
           Center(

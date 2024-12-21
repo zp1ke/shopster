@@ -4,8 +4,11 @@ import 'package:ionicons/ionicons.dart';
 class AppIcons {
   AppIcons._();
 
-  static const arrowRightOutline = Ionicons.arrow_forward_outline;
-  static const arrowRightFilled = Ionicons.arrow_forward;
+  static const arrowBackOutline = Ionicons.arrow_back_outline;
+  static const arrowBackFilled = Ionicons.arrow_back;
+
+  static const arrowForwardOutline = Ionicons.arrow_forward_outline;
+  static const arrowForwardFilled = Ionicons.arrow_forward;
 
   static const closeOutline = Ionicons.close_outline;
   static const closeFilled = Ionicons.close;
@@ -37,6 +40,9 @@ class AppIcons {
 
   static const storeOutline = Ionicons.storefront_outline;
   static const storeFilled = Ionicons.storefront;
+
+  static const shoppingCartOutlined = Ionicons.cart_outline;
+  static const shoppingCartFilled = Ionicons.cart;
 
   static const userOutline = Ionicons.person_outline;
   static const userFilled = Ionicons.person;

@@ -48,4 +48,12 @@ class AppTheme {
       AppThemeColors.dark,
     ],
   );
+
+  static Color shopHeaderBackgroundColor(BuildContext context) {
+    return Theme.of(context).colorScheme.primary;
+  }
+
+  static Color shopHeaderForegroundColor(BuildContext context) {
+    return Theme.of(context).colorScheme.onPrimary;
+  }
 }

@@ -327,6 +327,12 @@ abstract class AppL10n {
   /// **'Home'**
   String get shopHome;
 
+  /// No description provided for @shopHomeTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Good day for shopping'**
+  String get shopHomeTitle;
+
   /// No description provided for @shopStore.
   ///
   /// In en, this message translates to:

@@ -111,7 +111,7 @@ class OnBoardingScreen extends StatelessWidget {
                 .movePageIndicator(OnboardingController.I.pageIndex + 1);
           }
         },
-        child: const Icon(AppIcons.arrowRightFilled),
+        child: const Icon(AppIcons.arrowForwardFilled),
       ),
     );
   }

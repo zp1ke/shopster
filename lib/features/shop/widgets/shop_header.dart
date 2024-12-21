@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shopster/common/styles/sizes.dart';
+import 'package:shopster/common/styles/theme.dart';
 import 'package:shopster/common/widgets/circular_container.dart';
 import 'package:shopster/common/widgets/curved_header.dart';
 
@@ -16,6 +17,7 @@ class ShopHeaderWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CurvedHeader(
+      backgroundColor: AppTheme.shopHeaderBackgroundColor(context),
       height: size,
       child: Stack(
         children: [
