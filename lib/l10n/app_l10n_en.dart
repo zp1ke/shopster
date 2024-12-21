@@ -119,4 +119,16 @@ class AppL10nEn extends AppL10n {
 
   @override
   String get signUpSuccessSubtitle => 'Your Account has been successfully created';
+
+  @override
+  String get shopHome => 'Home';
+
+  @override
+  String get shopStore => 'Store';
+
+  @override
+  String get shopWish => 'Wishlist';
+
+  @override
+  String get shopUser => 'Profile';
 }

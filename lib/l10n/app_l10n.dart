@@ -320,6 +320,30 @@ abstract class AppL10n {
   /// In en, this message translates to:
   /// **'Your Account has been successfully created'**
   String get signUpSuccessSubtitle;
+
+  /// No description provided for @shopHome.
+  ///
+  /// In en, this message translates to:
+  /// **'Home'**
+  String get shopHome;
+
+  /// No description provided for @shopStore.
+  ///
+  /// In en, this message translates to:
+  /// **'Store'**
+  String get shopStore;
+
+  /// No description provided for @shopWish.
+  ///
+  /// In en, this message translates to:
+  /// **'Wishlist'**
+  String get shopWish;
+
+  /// No description provided for @shopUser.
+  ///
+  /// In en, this message translates to:
+  /// **'Profile'**
+  String get shopUser;
 }
 
 class _AppL10nDelegate extends LocalizationsDelegate<AppL10n> {
