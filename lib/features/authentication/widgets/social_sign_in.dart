@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shopster/common/styles/sizes.dart';
-import 'package:shopster/common/styles/theme_extension.dart';
+import 'package:shopster/common/styles/theme.dart';
 import 'package:shopster/common/widgets/icons.dart';
 
 class SocialSignInWidget extends StatelessWidget {
@@ -23,7 +23,7 @@ class SocialSignInWidget extends StatelessWidget {
       onPressed: () {},
       icon: Icon(
         AppIcons.google,
-        color: AppThemeColors.of(context).google,
+        color: Theme.of(context).colorScheme.app.google,
       ),
     );
   }
@@ -33,7 +33,7 @@ class SocialSignInWidget extends StatelessWidget {
       onPressed: () {},
       icon: Icon(
         AppIcons.facebook,
-        color: AppThemeColors.of(context).facebook,
+        color: Theme.of(context).colorScheme.app.facebook,
       ),
     );
   }

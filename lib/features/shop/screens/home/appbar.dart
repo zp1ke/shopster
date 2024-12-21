@@ -18,22 +18,22 @@ class HomeAppbar extends StatelessWidget {
   }
 
   Widget appbarTitle(BuildContext context) {
-    final textTheme = Theme.of(context).textTheme;
+    final theme = Theme.of(context);
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
           AppL10n.of(context).shopHomeTitle,
-          style: textTheme.labelMedium?.copyWith(
-            color: AppTheme.shopHeaderForegroundColor(context)
+          style: theme.textTheme.labelMedium?.copyWith(
+            color: theme.colorScheme.app.shopHeaderForeground
                 .withValues(alpha: 0.4),
           ),
           textAlign: TextAlign.start,
         ),
         Text(
           'TODO Name',
-          style: textTheme.headlineSmall?.copyWith(
-            color: AppTheme.shopHeaderForegroundColor(context),
+          style: theme.textTheme.headlineSmall?.copyWith(
+            color: theme.colorScheme.app.shopHeaderForeground,
           ),
           textAlign: TextAlign.start,
         ),

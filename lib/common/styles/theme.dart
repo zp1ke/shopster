@@ -1,8 +1,8 @@
 import 'package:flex_color_scheme/flex_color_scheme.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:shopster/common/styles/colors.dart';
 import 'package:shopster/common/styles/sizes.dart';
-import 'package:shopster/common/styles/theme_extension.dart';
 
 class AppTheme {
   AppTheme._();
@@ -33,9 +33,6 @@ class AppTheme {
     fontFamily: _fontFamily,
     visualDensity: _visualDensity,
     subThemesData: _subThemesData,
-    extensions: [
-      AppThemeColors.light,
-    ],
   );
 
   static ThemeData dark = FlexThemeData.dark(
@@ -44,16 +41,20 @@ class AppTheme {
     fontFamily: _fontFamily,
     visualDensity: _visualDensity,
     subThemesData: _subThemesData,
-    extensions: [
-      AppThemeColors.dark,
-    ],
   );
+}
 
-  static Color shopHeaderBackgroundColor(BuildContext context) {
-    return Theme.of(context).colorScheme.primary;
-  }
-
-  static Color shopHeaderForegroundColor(BuildContext context) {
-    return Theme.of(context).colorScheme.onPrimary;
+extension AppColorScheme on ColorScheme {
+  AppColors get app {
+    if (brightness == Brightness.light) {
+      return AppColors.light.copyWith(
+        shopHeaderBackground: primary,
+        shopHeaderForeground: onPrimary,
+      );
+    }
+    return AppColors.dark.copyWith(
+      shopHeaderBackground: primary,
+      shopHeaderForeground: onPrimary,
+    );
   }
 }

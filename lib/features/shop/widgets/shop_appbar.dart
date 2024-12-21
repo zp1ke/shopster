@@ -22,10 +22,6 @@ class ShopAppbar extends StatelessWidget implements PreferredSizeWidget {
     this.actions,
   });
 
-  Color foregroundColor(BuildContext context) {
-    return AppTheme.shopHeaderForegroundColor(context);
-  }
-
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -47,7 +43,7 @@ class ShopAppbar extends StatelessWidget implements PreferredSizeWidget {
         onPressed: Get.back,
         icon: Icon(
           AppIcons.arrowBackFilled,
-          color: foregroundColor(context),
+          color: Theme.of(context).colorScheme.app.shopHeaderForeground,
         ),
       );
     }
@@ -64,7 +60,9 @@ class ShopAppbar extends StatelessWidget implements PreferredSizeWidget {
     if (titleText != null) {
       return Text(
         titleText!,
-        style: TextStyle(color: foregroundColor(context)),
+        style: TextStyle(
+          color: Theme.of(context).colorScheme.app.shopHeaderForeground,
+        ),
       );
     }
     return title;
