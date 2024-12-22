@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:shopster/common/styles/sizes.dart';
 import 'package:shopster/features/shop/controllers/shop.dart';
 
 class ShopScreen extends StatelessWidget {
@@ -18,6 +19,11 @@ class ShopScreen extends StatelessWidget {
       bottomNavigationBar: Obx(
         () => NavigationBar(
           selectedIndex: controller.pageIndex,
+          indicatorShape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.all(
+              Radius.circular(AppSize.buttonRadius),
+            ),
+          ),
           onDestinationSelected: (index) {
             controller.pageIndex = index;
           },

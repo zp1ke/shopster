@@ -14,6 +14,8 @@ abstract class ShopPage {
     return _widget!;
   }
 
+  String get id;
+
   NavigationDestination buildNavigationMenu(BuildContext context);
 
   Widget buildWidget();

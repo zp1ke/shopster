@@ -130,6 +130,12 @@ class AppL10nEn extends AppL10n {
   String get shopHomeSearchHint => 'Search in store';
 
   @override
+  String get shopHomePopularCategories => 'Popular Categories';
+
+  @override
+  String get shopHomeViewAllCategories => 'View all';
+
+  @override
   String get shopStore => 'Store';
 
   @override

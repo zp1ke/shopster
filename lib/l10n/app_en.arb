@@ -41,6 +41,8 @@
   "shopHome": "Home",
   "shopHomeTitle": "Good day for shopping",
   "shopHomeSearchHint": "Search in store",
+  "shopHomePopularCategories": "Popular Categories",
+  "shopHomeViewAllCategories": "View all",
   "shopStore": "Store",
   "shopWish": "Wishlist",
   "shopUser": "Profile"

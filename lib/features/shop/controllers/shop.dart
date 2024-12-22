@@ -7,6 +7,8 @@ import 'package:shopster/features/shop/screens/user/user.dart';
 import 'package:shopster/features/shop/screens/wish/wish.dart';
 
 class ShopController extends GetxController {
+  static ShopController get I => Get.find();
+
   final _currentPage = 0.obs;
   final _pages = <ShopPage>[
     HomePage(),
@@ -20,7 +22,9 @@ class ShopController extends GetxController {
   }
 
   set pageIndex(int index) {
-    _currentPage.value = index;
+    if (index >= 0 && index < _pages.length) {
+      _currentPage.value = index;
+    }
   }
 
   List<NavigationDestination> menu(BuildContext context) {
@@ -31,5 +35,9 @@ class ShopController extends GetxController {
 
   Widget get page {
     return _pages[_currentPage.value].widget();
+  }
+
+  void navToPage(String id) {
+    pageIndex = _pages.indexWhere((page) => page.id == id);
   }
 }

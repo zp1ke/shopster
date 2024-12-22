@@ -339,6 +339,18 @@ abstract class AppL10n {
   /// **'Search in store'**
   String get shopHomeSearchHint;
 
+  /// No description provided for @shopHomePopularCategories.
+  ///
+  /// In en, this message translates to:
+  /// **'Popular Categories'**
+  String get shopHomePopularCategories;
+
+  /// No description provided for @shopHomeViewAllCategories.
+  ///
+  /// In en, this message translates to:
+  /// **'View all'**
+  String get shopHomeViewAllCategories;
+
   /// No description provided for @shopStore.
   ///
   /// In en, this message translates to:

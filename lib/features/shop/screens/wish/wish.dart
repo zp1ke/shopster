@@ -4,6 +4,11 @@ import 'package:shopster/features/shop/models/page.dart';
 import 'package:shopster/l10n/app_l10n.dart';
 
 class WishPage extends ShopPage {
+  static const pageId = 'wish';
+
+  @override
+  String get id => pageId;
+
   @override
   NavigationDestination buildNavigationMenu(BuildContext context) {
     return NavigationDestination(

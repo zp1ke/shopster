@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:shopster/common/styles/sizes.dart';
 import 'package:shopster/common/widgets/image/icons.dart';
+import 'package:shopster/features/shop/controllers/shop.dart';
+import 'package:shopster/features/shop/screens/store/store.dart';
 import 'package:shopster/utils/debounce.dart';
 
 class ShopSearchBar extends StatelessWidget {
@@ -44,7 +46,9 @@ class ShopSearchBar extends StatelessWidget {
               final String item = 'TODO $index';
               return ListTile(
                 title: Text(item),
-                onTap: () {},
+                onTap: () {
+                  ShopController.I.navToPage(StorePage.pageId);
+                },
               );
             },
           );

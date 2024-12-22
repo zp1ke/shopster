@@ -5,6 +5,9 @@ import 'package:shopster/l10n/app_l10n.dart';
 
 class UserPage extends ShopPage {
   @override
+  String get id => 'user';
+
+  @override
   NavigationDestination buildNavigationMenu(BuildContext context) {
     return NavigationDestination(
       icon: const Icon(AppIcons.userOutline),
