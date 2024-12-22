@@ -40,6 +40,7 @@
   "signUpSuccessSubtitle": "Your Account has been successfully created",
   "shopHome": "Home",
   "shopHomeTitle": "Good day for shopping",
+  "shopHomeSearchHint": "Search in store",
   "shopStore": "Store",
   "shopWish": "Wishlist",
   "shopUser": "Profile"

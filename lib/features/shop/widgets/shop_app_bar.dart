@@ -4,7 +4,7 @@ import 'package:shopster/common/styles/sizes.dart';
 import 'package:shopster/common/styles/theme.dart';
 import 'package:shopster/common/widgets/image/icons.dart';
 
-class ShopAppbar extends StatelessWidget implements PreferredSizeWidget {
+class ShopAppBar extends StatelessWidget implements PreferredSizeWidget {
   final String? titleText;
   final Widget? title;
   final bool canGoBack;
@@ -12,7 +12,7 @@ class ShopAppbar extends StatelessWidget implements PreferredSizeWidget {
   final IconData? leadingIcon;
   final List<Widget>? actions;
 
-  const ShopAppbar({
+  const ShopAppBar({
     super.key,
     this.titleText,
     this.title,
@@ -70,6 +70,6 @@ class ShopAppbar extends StatelessWidget implements PreferredSizeWidget {
 
   @override
   Size get preferredSize {
-    return Size.fromHeight(AppSize.appbarHeight);
+    return Size.fromHeight(AppSize.appBarHeight);
   }
 }

@@ -25,5 +25,5 @@ class AppSize {
   static const pageMinWidth = 200.0;
   static const pageMaxWidth = 500.0;
   static const shopHeaderSize = pageMaxWidth * 0.75;
-  static const appbarHeight = kToolbarHeight;
+  static const appBarHeight = kToolbarHeight;
 }

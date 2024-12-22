@@ -127,6 +127,9 @@ class AppL10nEn extends AppL10n {
   String get shopHomeTitle => 'Good day for shopping';
 
   @override
+  String get shopHomeSearchHint => 'Search in store';
+
+  @override
   String get shopStore => 'Store';
 
   @override

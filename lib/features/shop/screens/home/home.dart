@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:shopster/common/styles/sizes.dart';
 import 'package:shopster/common/widgets/image/icons.dart';
 import 'package:shopster/features/shop/models/page.dart';
-import 'package:shopster/features/shop/screens/home/appbar.dart';
+import 'package:shopster/features/shop/screens/home/app_bar.dart';
 import 'package:shopster/features/shop/widgets/shop_header.dart';
+import 'package:shopster/features/shop/widgets/shop_search_bar.dart';
 import 'package:shopster/l10n/app_l10n.dart';
 
 class HomePage extends ShopPage {
@@ -28,8 +30,10 @@ class _HomeScreen extends StatelessWidget {
       children: [
         ShopHeaderWidget(
           child: Column(
+            spacing: AppSize.itemSpacing,
             children: [
-              HomeAppbar(),
+              HomeAppBar(subtitle: 'TODO NAME'),
+              ShopSearchBar(hintText: AppL10n.of(context).shopHomeSearchHint),
             ],
           ),
         ),

@@ -38,6 +38,9 @@ class AppIcons {
   static const phoneOutline = Ionicons.call_outline;
   static const phoneFilled = Ionicons.call;
 
+  static const searchOutline = Ionicons.search_outline;
+  static const searchFilled = Ionicons.search;
+
   static const storeOutline = Ionicons.storefront_outline;
   static const storeFilled = Ionicons.storefront;
 
