@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shopster/common/styles/sizes.dart';
-import 'package:shopster/common/widgets/logo_hero.dart';
+import 'package:shopster/common/widgets/image/logo_hero.dart';
 
 class LogoHeaderWidget extends StatelessWidget {
   final String title;

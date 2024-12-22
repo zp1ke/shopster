@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shopster/common/styles/sizes.dart';
-import 'package:shopster/common/widgets/icons.dart';
+import 'package:shopster/common/widgets/image/icons.dart';
 
 class EmailField extends StatelessWidget {
   final String? labelText;

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:shopster/common/styles/sizes.dart';
-import 'package:shopster/common/widgets/logo_hero.dart';
+import 'package:shopster/common/widgets/image/logo_hero.dart';
 import 'package:shopster/common/widgets/page_box.dart';
 import 'package:shopster/common/widgets/text_divider.dart';
 import 'package:shopster/features/authentication/screens/sign_up/form.dart';

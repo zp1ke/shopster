@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shopster/common/styles/sizes.dart';
-import 'package:shopster/common/widgets/icons.dart';
+import 'package:shopster/common/widgets/image/icons.dart';
 import 'package:shopster/common/widgets/input/email_field.dart';
 import 'package:shopster/common/widgets/input/password_field.dart';
 import 'package:shopster/common/widgets/input/phone_field.dart';

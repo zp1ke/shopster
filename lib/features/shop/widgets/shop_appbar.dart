@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:shopster/common/styles/sizes.dart';
 import 'package:shopster/common/styles/theme.dart';
-import 'package:shopster/common/widgets/icons.dart';
+import 'package:shopster/common/widgets/image/icons.dart';
 
 class ShopAppbar extends StatelessWidget implements PreferredSizeWidget {
   final String? titleText;

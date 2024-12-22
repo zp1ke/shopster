@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:shopster/common/images.dart';
 import 'package:shopster/common/styles/sizes.dart';
-import 'package:shopster/common/widgets/icons.dart';
-import 'package:shopster/common/widgets/image_text.dart';
+import 'package:shopster/common/widgets/image/icons.dart';
+import 'package:shopster/common/widgets/image/image_text.dart';
 import 'package:shopster/features/authentication/controllers/on_boarding.dart';
 import 'package:shopster/features/authentication/screens/sign_in/sign_in.dart';
 import 'package:shopster/l10n/app_l10n.dart';
@@ -52,13 +52,13 @@ class OnBoardingScreen extends StatelessWidget {
         padding: padding,
       ),
       ImageTextWidget(
-        image: AppImage.onboardingShopping,
+        animation: AppImage.onboardingAnimationShopping,
         title: app1l0n.onboardingShoppingTitle,
         subtitle: app1l0n.onboardingShoppingSubtitle,
         padding: padding,
       ),
       ImageTextWidget(
-        image: AppImage.onboardingDelivery,
+        animation: AppImage.onboardingAnimationDelivery,
         title: app1l0n.onboardingDeliveryTitle,
         subtitle: app1l0n.onboardingDeliverySubtitle,
         padding: padding,

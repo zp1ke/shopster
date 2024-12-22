@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:shopster/common/widgets/icons.dart';
+import 'package:shopster/common/widgets/image/icons.dart';
 import 'package:shopster/features/shop/models/page.dart';
 import 'package:shopster/l10n/app_l10n.dart';
 

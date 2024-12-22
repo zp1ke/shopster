@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:shopster/common/images.dart';
 import 'package:shopster/common/styles/sizes.dart';
-import 'package:shopster/common/widgets/image_text.dart';
+import 'package:shopster/common/widgets/image/image_text.dart';
 import 'package:shopster/l10n/app_l10n.dart';
 
 class VerifyEmailWidget extends StatelessWidget {
