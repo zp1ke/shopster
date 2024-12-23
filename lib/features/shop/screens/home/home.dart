@@ -38,17 +38,17 @@ class _HomeScreen extends StatelessWidget {
   final categories = List<ShopCategory>.generate(10, (index) {
     return ShopCategory(
       name: 'Category ${index + 1}',
-      imageUrl: 'https://api.iconify.design/ion/cube.svg',
+      imageUrl:
+          'https://fakeimg.pl/64x64/?text=CAT-${index + 1}',
     );
   });
 
   List<ImageRounded> highlightProducts(BuildContext context) {
     final width =
         MediaQuery.of(context).size.width - (AppSize.defaultSpacing * 2);
-    return [
-      'https://d1csarkz8obe9u.cloudfront.net/posterpreviews/nike-shoes-facebook-ad-design-template-3feddc44f949d144553f31630a701ac7_screen.jpg',
-      'https://3.bp.blogspot.com/-nsSzUC_cT4w/WC9JJig7FEI/AAAAAAAAAA8/FAziopnM0oUyC47LG4iwuIVio06hJknaACLcB/s1600/nike%2Bas.jpg',
-    ].map(
+    final imagesUrl = List<String>.generate(5,
+        (index) => 'https://fakeimg.pl/350x200/?text=HIGHLIGHT-${index + 1}');
+    return imagesUrl.map(
       (image) {
         return ImageRounded(
           image,

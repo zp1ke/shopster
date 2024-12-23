@@ -98,14 +98,15 @@ class ShopCategoriesWidget extends StatelessWidget {
   }
 
   Widget categoryAvatar(String imageUrl, double size) {
-    return CircleAvatar(
-      backgroundColor: foregroundColor,
-      radius: AppSize.categoriesBarHeight * avatarFactor / 2,
-      child: CircleAvatar(
-        backgroundColor: foregroundColor,
-        radius: size / 2,
-        child: ImageWidget(imageUrl, height: size),
+    return Container(
+      width: size,
+      height: size,
+      clipBehavior: Clip.antiAlias,
+      decoration: BoxDecoration(
+        color: foregroundColor,
+        shape: BoxShape.circle,
       ),
+      child: ImageWidget(imageUrl, fit: BoxFit.cover),
     );
   }
 
