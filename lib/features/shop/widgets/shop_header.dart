@@ -16,8 +16,9 @@ class ShopHeaderWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
     return CurvedHeader(
-      backgroundColor: Theme.of(context).colorScheme.app.shopHeaderBackground,
+      backgroundColor: theme.colorScheme.app.shopHeaderBackground,
       height: size,
       child: Stack(
         children: [
@@ -28,6 +29,7 @@ class ShopHeaderWidget extends StatelessWidget {
               width: size,
               height: size,
               radius: size,
+              backgroundColor: theme.canvasColor.withValues(alpha: 0.1),
             ),
           ),
           Positioned(
@@ -37,6 +39,7 @@ class ShopHeaderWidget extends StatelessWidget {
               width: size,
               height: size,
               radius: size,
+              backgroundColor: theme.canvasColor.withValues(alpha: 0.1),
             ),
           ),
           if (child != null) child!,

@@ -11,11 +11,11 @@ class OnboardingController extends GetxController {
     return _currentPage.value;
   }
 
-  void updatePageIndicator(int index) {
+  set pageIndex(int index) {
     _currentPage.value = index;
   }
 
-  void movePageIndicator(int index) {
+  void goToPage(int index) {
     _currentPage.value = index;
     pageController.animateToPage(
       index,

@@ -16,6 +16,9 @@ class AppIcons {
   static const emailOutline = Ionicons.mail_outline;
   static const emailFilled = Ionicons.mail;
 
+  static const errorOutline = Ionicons.warning_outline;
+  static const errorFilled = Ionicons.warning;
+
   static const eyeOutline = Ionicons.eye_outline;
   static const eyeFilled = Ionicons.eye;
 

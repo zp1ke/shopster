@@ -4,15 +4,15 @@ import 'package:shopster/common/styles/sizes.dart';
 class CircularContainer extends StatelessWidget {
   final double width;
   final double height;
-  final double radius;
-  final Color? backgroundColor;
+  final Color backgroundColor;
+  final double? radius;
 
   const CircularContainer({
     super.key,
     this.width = AppSize.shopHeaderSize,
     this.height = AppSize.shopHeaderSize,
-    this.radius = AppSize.shopHeaderSize,
-    this.backgroundColor,
+    required this.backgroundColor,
+    this.radius,
   });
 
   @override
@@ -21,9 +21,8 @@ class CircularContainer extends StatelessWidget {
       width: width,
       height: height,
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(radius),
-        color: (backgroundColor ?? Theme.of(context).canvasColor)
-            .withValues(alpha: 0.1),
+        borderRadius: BorderRadius.circular(radius ?? width),
+        color: backgroundColor,
       ),
     );
   }

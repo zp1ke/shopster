@@ -27,7 +27,9 @@ class OnBoardingScreen extends StatelessWidget {
         children: [
           PageView(
             controller: controller.pageController,
-            onPageChanged: controller.updatePageIndicator,
+            onPageChanged: (index) {
+              controller.pageIndex = index;
+            },
             children: pages,
           ),
           Obx(() => skipButton(context, pages.length)),
@@ -52,13 +54,13 @@ class OnBoardingScreen extends StatelessWidget {
         padding: padding,
       ),
       ImageTextWidget(
-        animation: AppImage.onboardingAnimationShopping,
+        image: AppImage.onboardingAnimationShopping,
         title: app1l0n.onboardingShoppingTitle,
         subtitle: app1l0n.onboardingShoppingSubtitle,
         padding: padding,
       ),
       ImageTextWidget(
-        animation: AppImage.onboardingAnimationDelivery,
+        image: AppImage.onboardingAnimationDelivery,
         title: app1l0n.onboardingDeliveryTitle,
         subtitle: app1l0n.onboardingDeliverySubtitle,
         padding: padding,
@@ -87,7 +89,7 @@ class OnBoardingScreen extends StatelessWidget {
       child: SmoothPageIndicator(
         controller: OnboardingController.I.pageController,
         count: pagesCount,
-        onDotClicked: OnboardingController.I.movePageIndicator,
+        onDotClicked: OnboardingController.I.goToPage,
         effect: ExpandingDotsEffect(),
       ),
     );
@@ -103,7 +105,7 @@ class OnBoardingScreen extends StatelessWidget {
             goSignIn();
           } else {
             OnboardingController.I
-                .movePageIndicator(OnboardingController.I.pageIndex + 1);
+                .goToPage(OnboardingController.I.pageIndex + 1);
           }
         },
         child: const Icon(AppIcons.arrowForwardFilled),

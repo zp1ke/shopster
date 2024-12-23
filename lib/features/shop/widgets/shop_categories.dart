@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:shopster/common/styles/sizes.dart';
-import 'package:shopster/common/widgets/image/network_image_svg.dart';
+import 'package:shopster/common/widgets/image/image.dart';
 import 'package:shopster/features/shop/models/category.dart';
 
-class ShopPopularCategoriesWidget extends StatelessWidget {
+class ShopCategoriesWidget extends StatelessWidget {
   final String title;
   final Color foregroundColor;
   final List<ShopCategory> categories;
@@ -12,7 +12,7 @@ class ShopPopularCategoriesWidget extends StatelessWidget {
   final Function(ShopCategory)? onCategory;
   final double avatarFactor;
 
-  const ShopPopularCategoriesWidget({
+  const ShopCategoriesWidget({
     super.key,
     required this.title,
     required this.foregroundColor,
@@ -104,17 +104,9 @@ class ShopPopularCategoriesWidget extends StatelessWidget {
       child: CircleAvatar(
         backgroundColor: foregroundColor,
         radius: size / 2,
-        child: categoryImage(imageUrl, size),
+        child: ImageWidget(imageUrl, height: size),
       ),
     );
-  }
-
-  Widget categoryImage(String imageUrl, double size) {
-    final fit = BoxFit.scaleDown;
-    if (imageUrl.endsWith('.svg')) {
-      return NetworkImageSvg(imageUrl, height: size, fit: fit);
-    }
-    return Image.network(imageUrl, height: size, fit: fit);
   }
 
   Widget categoryName(BuildContext context, String name) {

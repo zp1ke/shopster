@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:shopster/common/styles/sizes.dart';
-import 'package:shopster/common/widgets/image/asset_animation.dart';
+import 'package:shopster/common/widgets/image/image.dart';
 
 class ImageTextWidget extends StatelessWidget {
-  final String? image;
-  final String? animation;
+  final String image;
   final String title;
   final String subtitle;
   final EdgeInsets? padding;
@@ -12,23 +11,23 @@ class ImageTextWidget extends StatelessWidget {
 
   const ImageTextWidget({
     super.key,
-    this.image,
-    this.animation,
+    required this.image,
     required this.title,
     required this.subtitle,
     this.padding,
     this.subtitleStyle,
-  }) : assert(image != null || animation != null);
+  });
 
   @override
   Widget build(BuildContext context) {
     final textTheme = Theme.of(context).textTheme;
+    final imageSize = MediaQuery.of(context).size.height * 0.5;
     return Padding(
       padding: padding ?? const EdgeInsets.all(AppSize.defaultSpacing),
       child: Column(
         spacing: AppSize.itemSpacing,
         children: [
-          imageWidget(context),
+          ImageWidget(image, height: imageSize, fit: BoxFit.scaleDown),
           Text(
             title,
             style: textTheme.headlineMedium,
@@ -41,22 +40,6 @@ class ImageTextWidget extends StatelessWidget {
           ),
         ],
       ),
-    );
-  }
-
-  Widget imageWidget(BuildContext context) {
-    final size = MediaQuery.of(context).size.height * 0.5;
-    if (animation != null) {
-      return AssetAnimation(
-        animation!,
-        height: size,
-        fit: BoxFit.scaleDown,
-      );
-    }
-    return Image(
-      image: AssetImage(image!),
-      height: size,
-      fit: BoxFit.scaleDown,
     );
   }
 }
