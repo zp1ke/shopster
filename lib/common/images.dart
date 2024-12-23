@@ -3,6 +3,14 @@ import 'package:flutter/material.dart';
 class AppImage {
   AppImage._();
 
+  static String fakeImageUrl(int width, {int? height, String? text}) {
+    var url = 'https://fakeimg.pl/${width}x${height ?? width}';
+    if (text != null) {
+      url += '/?text=$text';
+    }
+    return url;
+  }
+
   static const String _logosPath = 'assets/logos';
 
   // app

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shopster/common/images.dart';
 import 'package:shopster/common/styles/sizes.dart';
 import 'package:shopster/common/styles/theme.dart';
 import 'package:shopster/common/widgets/image/icons.dart';
@@ -38,16 +39,20 @@ class _HomeScreen extends StatelessWidget {
   final categories = List<ShopCategory>.generate(10, (index) {
     return ShopCategory(
       name: 'Category ${index + 1}',
-      imageUrl:
-          'https://fakeimg.pl/64x64/?text=CAT-${index + 1}',
+      imageUrl: AppImage.fakeImageUrl(64, text: 'CAT-${index + 1}'),
     );
   });
 
   List<ImageRounded> highlightProducts(BuildContext context) {
     final width =
         MediaQuery.of(context).size.width - (AppSize.defaultSpacing * 2);
-    final imagesUrl = List<String>.generate(5,
-        (index) => 'https://fakeimg.pl/350x200/?text=HIGHLIGHT-${index + 1}');
+    final imagesUrl = List<String>.generate(
+      5,
+      (index) {
+        return AppImage.fakeImageUrl(350,
+            height: 200, text: 'HIGHLIGHT-${index + 1}');
+      },
+    );
     return imagesUrl.map(
       (image) {
         return ImageRounded(
