@@ -24,7 +24,7 @@ class ShopCategoriesWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.only(left: AppSize.defaultSpacing),
+      padding: EdgeInsets.symmetric(horizontal: AppSize.defaultSpacing),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [

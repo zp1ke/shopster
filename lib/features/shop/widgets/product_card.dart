@@ -37,6 +37,7 @@ class ProductCardVertical extends StatelessWidget {
 
   Widget header(BuildContext context) {
     final theme = Theme.of(context);
+    final positionPadding = AppSize.productCardPadding / 2;
     return RoundedContainer(
       height: size,
       padding: EdgeInsets.all(AppSize.productCardPadding),
@@ -47,13 +48,13 @@ class ProductCardVertical extends StatelessWidget {
           ImageRounded(product.imageUrl),
           if (product.discountPercent != null)
             Positioned(
-              top: AppSize.productCardPadding,
-              left: AppSize.productCardPadding,
+              top: positionPadding,
+              left: positionPadding,
               child: discountWidget(context),
             ),
           Positioned(
-            top: 0,
-            right: 0,
+            top: positionPadding,
+            right: positionPadding,
             child: favButton(context),
           ),
         ],
@@ -79,12 +80,17 @@ class ProductCardVertical extends StatelessWidget {
   }
 
   Widget favButton(BuildContext context) {
-    return IconButton(
-      onPressed: () {},
-      visualDensity: VisualDensity.compact,
-      icon: Icon(
-        product.isFav ? AppIcons.heartFilled : AppIcons.heartOutline,
-        color: Theme.of(context).colorScheme.errorContainer,
+    final theme = Theme.of(context);
+    return RoundedContainer(
+      backgroundColor: theme.cardColor,
+      radius: AppSize.buttonRadius,
+      child: IconButton(
+        onPressed: () {},
+        visualDensity: VisualDensity.compact,
+        icon: Icon(
+          product.isFav ? AppIcons.heartFilled : AppIcons.heartOutline,
+          color: theme.colorScheme.error,
+        ),
       ),
     );
   }
@@ -149,7 +155,7 @@ class ProductCardVertical extends StatelessWidget {
   Widget price(BuildContext context) {
     return Text(
       '\$${product.price.toStringAsFixed(2)}',
-      style: Theme.of(context).textTheme.headlineMedium,
+      style: Theme.of(context).textTheme.headlineSmall,
       maxLines: 1,
       overflow: TextOverflow.ellipsis,
     );
