@@ -4,6 +4,9 @@ import 'package:ionicons/ionicons.dart';
 class AppIcons {
   AppIcons._();
 
+  static const addOutline = Ionicons.add_outline;
+  static const addFilled = Ionicons.add;
+
   static const arrowBackOutline = Ionicons.arrow_back_outline;
   static const arrowBackFilled = Ionicons.arrow_back;
 
@@ -52,4 +55,7 @@ class AppIcons {
 
   static const userOutline = Ionicons.person_outline;
   static const userFilled = Ionicons.person;
+
+  static const verifiedOutline = Ionicons.checkmark_circle_outline;
+  static const verifiedFilled = Ionicons.checkmark_circle;
 }

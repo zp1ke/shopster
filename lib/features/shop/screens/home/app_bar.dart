@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:shopster/common/styles/theme.dart';
-import 'package:shopster/features/shop/widgets/shop_app_bar.dart';
-import 'package:shopster/features/shop/widgets/shop_cart_button.dart';
+import 'package:shopster/common/styles/index.dart';
+import 'package:shopster/features/shop/widgets/index.dart';
 import 'package:shopster/l10n/app_l10n.dart';
 
 class HomeAppBar extends StatelessWidget {

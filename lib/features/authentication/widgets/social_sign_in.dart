@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:shopster/common/styles/sizes.dart';
-import 'package:shopster/common/styles/theme.dart';
+import 'package:shopster/common/styles/index.dart';
 import 'package:shopster/common/widgets/image/icons.dart';
 
 class SocialSignInWidget extends StatelessWidget {

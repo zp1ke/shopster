@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:shopster/common/styles/sizes.dart';
-import 'package:shopster/common/styles/theme.dart';
+import 'package:shopster/common/styles/index.dart';
 import 'package:shopster/common/widgets/circular_container.dart';
 import 'package:shopster/common/widgets/curved_header.dart';
 
@@ -25,7 +24,7 @@ class ShopHeaderWidget extends StatelessWidget {
           Positioned(
             top: size * -0.4,
             right: size * -0.65,
-            child: CircularContainer(
+            child: RoundedContainer(
               width: size,
               height: size,
               radius: size,
@@ -35,7 +34,7 @@ class ShopHeaderWidget extends StatelessWidget {
           Positioned(
             top: size * 0.25,
             right: size * -0.75,
-            child: CircularContainer(
+            child: RoundedContainer(
               width: size,
               height: size,
               radius: size,

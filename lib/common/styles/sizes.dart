@@ -20,11 +20,15 @@ class AppSize {
   static const itemSpacing = 16.0;
   static const sectionSpacing = 32.0;
   static const badgeOffset = 6.0;
+  static const productCardPadding = 8.0;
 
   // sizes
   static const pageMinWidth = 200.0;
   static const pageMaxWidth = 500.0;
-  static const shopHeaderSize = pageMaxWidth * 0.6;
+  static const shopHeaderSize = pageMaxWidth * 0.62;
   static const appBarHeight = kToolbarHeight;
-  static const categoriesBarHeight = 64.0;
+  static const categoriesBarHeight = 68.0;
+  static const categoriesImageHeightSmall = 50.0;
+  static const productCardWidth = 185.0;
+  static const productCardMinWidth = 150.0;
 }

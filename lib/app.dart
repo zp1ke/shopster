@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:shopster/common/styles/theme.dart';
+import 'package:shopster/common/styles/index.dart';
 import 'package:shopster/features/authentication/screens/on_boarding.dart';
 import 'package:shopster/features/routes.dart';
 import 'package:shopster/l10n/app_l10n.dart';

@@ -1,19 +1,19 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:shopster/common/images.dart';
-import 'package:shopster/common/styles/sizes.dart';
-import 'package:shopster/common/styles/theme.dart';
+import 'package:shopster/common/styles/index.dart';
 import 'package:shopster/common/widgets/image/icons.dart';
 import 'package:shopster/common/widgets/image/image_rounded.dart';
 import 'package:shopster/features/shop/controllers/shop.dart';
 import 'package:shopster/features/shop/models/category.dart';
 import 'package:shopster/features/shop/models/page.dart';
+import 'package:shopster/features/shop/models/product.dart';
 import 'package:shopster/features/shop/screens/home/app_bar.dart';
 import 'package:shopster/features/shop/screens/home/products_carousel.dart';
 import 'package:shopster/features/shop/screens/store/store.dart';
 import 'package:shopster/features/shop/screens/wish/wish.dart';
-import 'package:shopster/features/shop/widgets/shop_categories.dart';
-import 'package:shopster/features/shop/widgets/shop_header.dart';
-import 'package:shopster/features/shop/widgets/shop_search_bar.dart';
+import 'package:shopster/features/shop/widgets/index.dart';
 import 'package:shopster/l10n/app_l10n.dart';
 
 class HomePage extends ShopPage {
@@ -39,32 +39,49 @@ class _HomeScreen extends StatelessWidget {
   final categories = List<ShopCategory>.generate(10, (index) {
     return ShopCategory(
       name: 'Category ${index + 1}',
-      imageUrl: AppImage.fakeImageUrl(64, text: 'CAT-${index + 1}'),
+      imageUrl: AppImage.fakeImageUrl(width: 64, text: 'CAT-${index + 1}'),
+    );
+  });
+
+  final products = List<ShopProduct>.generate(10, (index) {
+    final verified = index > 0 && index % 2 == 0;
+    return ShopProduct(
+      name: 'Product ${index + 1}',
+      brand: 'Brand',
+      brandVerified: verified,
+      imageUrl: AppImage.fakeImageUrl(
+        width: 200,
+        height: 200,
+        text: 'PRODUCT-${index + 1}',
+      ),
+      isFav: index % 2 != 0,
+      price: 10 + index * 5.34,
+      discountPercent: verified ? index * 5 : null,
+      promoImageUrl: verified
+          ? AppImage.fakeImageUrl(
+              width: 350,
+              height: 200,
+              text: 'PROMO-${index + 1}',
+            )
+          : null,
     );
   });
 
   List<ImageRounded> highlightProducts(BuildContext context) {
     final width =
         MediaQuery.of(context).size.width - (AppSize.defaultSpacing * 2);
-    final imagesUrl = List<String>.generate(
-      5,
-      (index) {
-        return AppImage.fakeImageUrl(350,
-            height: 200, text: 'HIGHLIGHT-${index + 1}');
-      },
-    );
-    return imagesUrl.map(
-      (image) {
-        return ImageRounded(
-          image,
-          backgroundColor: Theme.of(context).highlightColor,
-          width: width,
-          onPressed: () {
-            ShopController.I.navToPage(StorePage.pageId);
-          },
-        );
-      },
-    ).toList(growable: false);
+    return products
+        .where((product) => product.promoImageUrl != null)
+        .map((product) {
+      return ImageRounded(
+        product.promoImageUrl!,
+        backgroundColor: Theme.of(context).highlightColor,
+        width: width,
+        onPressed: () {
+          ShopController.I.navToPage(StorePage.pageId);
+        },
+      );
+    }).toList(growable: false);
   }
 
   @override
@@ -82,9 +99,7 @@ class _HomeScreen extends StatelessWidget {
               ],
             ),
           ),
-          ProductsCarousel(
-            products: highlightProducts(context),
-          ),
+          productsWidget(context),
         ],
       ),
     );
@@ -103,6 +118,40 @@ class _HomeScreen extends StatelessWidget {
       onCategory: (_) {
         ShopController.I.navToPage(WishPage.pageId);
       },
+    );
+  }
+
+  Widget productsWidget(BuildContext context) {
+    return Padding(
+      padding: EdgeInsets.all(AppSize.itemSpacing / 2),
+      child: Column(
+        spacing: AppSize.itemSpacing,
+        children: [
+          ProductsCarousel(
+            products: highlightProducts(context),
+          ),
+          productsGrid(context),
+        ],
+      ),
+    );
+  }
+
+  Widget productsGrid(BuildContext context) {
+    var cardWidth = AppSize.productCardWidth;
+    final screenWidth =
+        MediaQuery.of(context).size.width - AppSize.itemSpacing * 2;
+    if (screenWidth / cardWidth < 2) {
+      cardWidth = max(screenWidth / 2, AppSize.productCardMinWidth);
+    }
+    return Wrap(
+      spacing: AppSize.itemSpacing,
+      runSpacing: AppSize.itemSpacing,
+      children: products
+          .map((product) => ProductCardVertical(
+                product: product,
+                size: cardWidth,
+              ))
+          .toList(growable: false),
     );
   }
 }

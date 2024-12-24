@@ -10,7 +10,6 @@ class ShopCategoriesWidget extends StatelessWidget {
   final String? actionTitle;
   final VoidCallback? onAction;
   final Function(ShopCategory)? onCategory;
-  final double avatarFactor;
 
   const ShopCategoriesWidget({
     super.key,
@@ -20,8 +19,7 @@ class ShopCategoriesWidget extends StatelessWidget {
     this.actionTitle,
     this.onAction,
     this.onCategory,
-    this.avatarFactor = 0.75,
-  }) : assert(avatarFactor > 0 && avatarFactor < 0.8);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -89,8 +87,7 @@ class ShopCategoriesWidget extends StatelessWidget {
       },
       child: Column(
         children: [
-          categoryAvatar(
-              category.imageUrl, AppSize.categoriesBarHeight * avatarFactor),
+          categoryAvatar(category.imageUrl, AppSize.categoriesImageHeightSmall),
           categoryName(context, category.name),
         ],
       ),

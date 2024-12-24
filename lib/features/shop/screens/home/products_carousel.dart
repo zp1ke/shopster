@@ -1,8 +1,7 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:shopster/common/styles/sizes.dart';
-import 'package:shopster/common/styles/theme.dart';
+import 'package:shopster/common/styles/index.dart';
 import 'package:shopster/common/widgets/circular_container.dart';
 import 'package:shopster/common/widgets/image/image_rounded.dart';
 import 'package:shopster/features/shop/controllers/home.dart';
@@ -40,11 +39,11 @@ class ProductsCarousel extends StatelessWidget {
               spacing: AppSize.itemSpacing / 2,
               children: List<Widget>.generate(products.length, (index) {
                 final selected = index == controller.productsCarouselIndex;
-                return CircularContainer(
+                return RoundedContainer(
                   width: AppSize.iconXs * 1.5,
                   height: AppSize.iconXs / 1.5,
                   backgroundColor: selected
-                      ? theme.colorScheme.app.success
+                      ? theme.indicatorColor
                       : theme.disabledColor,
                 );
               }),
