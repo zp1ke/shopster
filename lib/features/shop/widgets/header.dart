@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:shopster/common/styles/index.dart';
 import 'package:shopster/common/widgets/circular_container.dart';
 import 'package:shopster/common/widgets/curved_header.dart';
+import 'package:shopster/utils/device.dart';
 
 class ShopHeaderWidget extends StatelessWidget {
   final double size;
@@ -16,14 +17,15 @@ class ShopHeaderWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
+    final backgroundColor = theme.colorScheme.app.shopHeaderBackground;
     return CurvedHeader(
-      backgroundColor: theme.colorScheme.app.shopHeaderBackground,
+      backgroundColor: backgroundColor,
       height: size,
       child: Stack(
         children: [
           Positioned(
             top: size * -0.4,
-            right: size * -0.65,
+            left: size * -0.65,
             child: RoundedContainer(
               width: size,
               height: size,
@@ -45,5 +47,12 @@ class ShopHeaderWidget extends StatelessWidget {
         ],
       ),
     );
+  }
+
+  double statusBarHeight(BuildContext context) {
+    if (DeviceUtils.isAndroid) {
+      return MediaQuery.of(context).viewPadding.top;
+    }
+    return .0;
   }
 }
