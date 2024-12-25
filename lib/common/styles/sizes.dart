@@ -33,4 +33,5 @@ class AppSize {
   static const productCardWidth = 185.0;
   static const productCardMinWidth = 150.0;
   static const storeAppBarHeight = 440.0;
+  static const brandsImageHeightSmall = 40.0;
 }

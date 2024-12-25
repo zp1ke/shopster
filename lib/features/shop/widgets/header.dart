@@ -29,7 +29,7 @@ class ShopHeaderWidget extends StatelessWidget {
               width: size,
               height: size,
               radius: size,
-              backgroundColor: theme.canvasColor.withValues(alpha: 0.1),
+              backgroundColor: theme.primaryColor.withValues(alpha: 0.1),
             ),
           ),
           Positioned(
@@ -39,7 +39,7 @@ class ShopHeaderWidget extends StatelessWidget {
               width: size,
               height: size,
               radius: size,
-              backgroundColor: theme.canvasColor.withValues(alpha: 0.1),
+              backgroundColor: theme.primaryColor.withValues(alpha: 0.1),
             ),
           ),
           if (child != null) child!,
