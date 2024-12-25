@@ -1,9 +1,8 @@
-class ShopCategory {
-  final String name;
-  final String imageUrl;
+import 'package:shopster/features/shop/models/base_item.dart';
 
+class ShopCategory extends BaseItem {
   ShopCategory({
-    required this.name,
-    required this.imageUrl,
+    required super.name,
+    required super.imageUrl,
   });
 }

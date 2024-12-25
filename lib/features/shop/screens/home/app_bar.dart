@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:shopster/common/styles/index.dart';
 import 'package:shopster/features/shop/widgets/index.dart';
 import 'package:shopster/l10n/app_l10n.dart';
 
@@ -29,7 +28,7 @@ class HomeAppBar extends StatelessWidget {
         Text(
           AppL10n.of(context).shopHomeTitle,
           style: theme.textTheme.labelMedium?.copyWith(
-            color: theme.colorScheme.app.shopHeaderForeground
+            color: theme.colorScheme.onPrimaryContainer
                 .withValues(alpha: 0.4),
           ),
           textAlign: TextAlign.start,
@@ -37,7 +36,7 @@ class HomeAppBar extends StatelessWidget {
         Text(
           subtitle,
           style: theme.textTheme.headlineSmall?.copyWith(
-            color: theme.colorScheme.app.shopHeaderForeground,
+            color: theme.colorScheme.onPrimaryContainer,
           ),
           textAlign: TextAlign.start,
         ),

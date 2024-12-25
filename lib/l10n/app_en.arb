@@ -44,6 +44,17 @@
   "shopHomePopularCategories": "Popular Categories",
   "shopHomeViewAllCategories": "View all",
   "shopStore": "Store",
+  "shopStoreSearchHint": "Search...",
+  "shopStoreFeaturedBrands": "Featured Brands",
+  "shopStoreViewAllCategories": "View all",
+  "shopStoreBrandProductsAmount": "{amount} Products",
+  "@shopStoreBrandProductsAmount": {
+    "placeholders": {
+      "amount": {
+        "type": "int"
+      }
+    }
+  },
   "shopWish": "Wishlist",
   "shopUser": "Profile"
 }

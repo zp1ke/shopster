@@ -6,6 +6,7 @@ import 'package:shopster/common/styles/index.dart';
 import 'package:shopster/common/widgets/image/icons.dart';
 import 'package:shopster/common/widgets/image/image_rounded.dart';
 import 'package:shopster/features/shop/controllers/shop.dart';
+import 'package:shopster/features/shop/models/brand.dart';
 import 'package:shopster/features/shop/models/category.dart';
 import 'package:shopster/features/shop/models/page.dart';
 import 'package:shopster/features/shop/models/product.dart';
@@ -47,8 +48,11 @@ class _HomeScreen extends StatelessWidget {
     final verified = index > 0 && index % 2 == 0;
     return ShopProduct(
       name: 'Product ${index + 1}',
-      brand: 'Brand',
-      brandVerified: verified,
+      brand: ShopBrand(
+        name: 'Brand-$index',
+        imageUrl: '',
+        isVerified: verified,
+      ),
       imageUrl: AppImage.fakeImageUrl(
         width: 200,
         height: 200,
@@ -97,8 +101,13 @@ class _HomeScreen extends StatelessWidget {
               spacing: AppSize.itemSpacing / 2,
               children: [
                 HomeAppBar(subtitle: 'TODO NAME'),
-                ShopSearchBar(hintText: AppL10n.of(context).shopHomeSearchHint),
-                categoriesWidget(context, categories),
+                Padding(
+                  padding:
+                      EdgeInsets.symmetric(horizontal: AppSize.defaultSpacing),
+                  child: ShopSearchBar(
+                      hintText: AppL10n.of(context).shopHomeSearchHint),
+                ),
+                categoriesWidget(context),
               ],
             ),
           ),
@@ -108,12 +117,12 @@ class _HomeScreen extends StatelessWidget {
     );
   }
 
-  Widget categoriesWidget(BuildContext context, List<ShopCategory> categories) {
+  Widget categoriesWidget(BuildContext context) {
     final appL10n = AppL10n.of(context);
     return ShopCategoriesWidget(
       title: appL10n.shopHomePopularCategories,
       categories: categories,
-      foregroundColor: Theme.of(context).colorScheme.app.shopHeaderForeground,
+      foregroundColor: Theme.of(context).colorScheme.onPrimaryContainer,
       actionTitle: appL10n.shopHomeViewAllCategories,
       onAction: () {
         ShopController.I.navToPage(StorePage.pageId);

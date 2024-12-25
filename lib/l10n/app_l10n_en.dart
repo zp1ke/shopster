@@ -139,6 +139,20 @@ class AppL10nEn extends AppL10n {
   String get shopStore => 'Store';
 
   @override
+  String get shopStoreSearchHint => 'Search...';
+
+  @override
+  String get shopStoreFeaturedBrands => 'Featured Brands';
+
+  @override
+  String get shopStoreViewAllCategories => 'View all';
+
+  @override
+  String shopStoreBrandProductsAmount(int amount) {
+    return '$amount Products';
+  }
+
+  @override
   String get shopWish => 'Wishlist';
 
   @override

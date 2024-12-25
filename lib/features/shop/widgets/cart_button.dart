@@ -20,7 +20,7 @@ class ShopCartButton extends StatelessWidget {
         child: Icon(
           AppIcons.shoppingCartOutlined,
           color: iconColor ??
-              Theme.of(context).colorScheme.app.shopHeaderForeground,
+              Theme.of(context).colorScheme.onPrimaryContainer,
         ),
       ),
     );

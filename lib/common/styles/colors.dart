@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 
 @immutable
 class AppColors {
-  final Color shopHeaderBackground;
-  final Color shopHeaderForeground;
   final Color success;
   final Color onSuccess;
   final Color successContainer;
@@ -14,8 +12,6 @@ class AppColors {
   final Color onWarning;
 
   const AppColors._({
-    required this.shopHeaderBackground,
-    required this.shopHeaderForeground,
     required this.success,
     required this.onSuccess,
     required this.successContainer,
@@ -27,8 +23,6 @@ class AppColors {
   });
 
   static AppColors light = AppColors._(
-    shopHeaderBackground: Colors.transparent,
-    shopHeaderForeground: Colors.transparent,
     success: const Color(0xFF016B5D),
     onSuccess: const Color(0xFFFFFFFF),
     successContainer: const Color(0xFF9FF2E1),
@@ -40,8 +34,6 @@ class AppColors {
   );
 
   static AppColors dark = AppColors._(
-    shopHeaderBackground: Colors.transparent,
-    shopHeaderForeground: Colors.transparent,
     success: const Color(0xFF83D5C5),
     onSuccess: const Color(0xFF003730),
     successContainer: const Color(0xFF005046),
@@ -53,8 +45,6 @@ class AppColors {
   );
 
   AppColors copyWith({
-    required Color shopHeaderBackground,
-    required Color shopHeaderForeground,
     Color? success,
     Color? onSuccess,
     Color? successContainer,
@@ -65,8 +55,6 @@ class AppColors {
     Color? onWarning,
   }) {
     return AppColors._(
-      shopHeaderBackground: shopHeaderBackground,
-      shopHeaderForeground: shopHeaderForeground,
       success: success ?? this.success,
       onSuccess: onSuccess ?? this.onSuccess,
       successContainer: successContainer ?? this.successContainer,
@@ -82,14 +70,8 @@ class AppColors {
 extension AppColorScheme on ColorScheme {
   AppColors get app {
     if (brightness == Brightness.light) {
-      return AppColors.light.copyWith(
-        shopHeaderBackground: primary,
-        shopHeaderForeground: onPrimary,
-      );
+      return AppColors.light;
     }
-    return AppColors.dark.copyWith(
-      shopHeaderBackground: primary,
-      shopHeaderForeground: onPrimary,
-    );
+    return AppColors.dark;
   }
 }

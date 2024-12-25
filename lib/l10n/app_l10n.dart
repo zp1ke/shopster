@@ -357,6 +357,30 @@ abstract class AppL10n {
   /// **'Store'**
   String get shopStore;
 
+  /// No description provided for @shopStoreSearchHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Search...'**
+  String get shopStoreSearchHint;
+
+  /// No description provided for @shopStoreFeaturedBrands.
+  ///
+  /// In en, this message translates to:
+  /// **'Featured Brands'**
+  String get shopStoreFeaturedBrands;
+
+  /// No description provided for @shopStoreViewAllCategories.
+  ///
+  /// In en, this message translates to:
+  /// **'View all'**
+  String get shopStoreViewAllCategories;
+
+  /// No description provided for @shopStoreBrandProductsAmount.
+  ///
+  /// In en, this message translates to:
+  /// **'{amount} Products'**
+  String shopStoreBrandProductsAmount(int amount);
+
   /// No description provided for @shopWish.
   ///
   /// In en, this message translates to:

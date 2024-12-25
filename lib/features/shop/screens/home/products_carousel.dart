@@ -2,7 +2,7 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:shopster/common/styles/index.dart';
-import 'package:shopster/common/widgets/circular_container.dart';
+import 'package:shopster/common/widgets/rounded_container.dart';
 import 'package:shopster/features/shop/controllers/home.dart';
 
 class ProductsCarousel extends StatelessWidget {

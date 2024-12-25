@@ -6,6 +6,7 @@ import 'package:shopster/common/widgets/image/icons.dart';
 class ShopAppBar extends StatelessWidget implements PreferredSizeWidget {
   final String? titleText;
   final Widget? title;
+  final Color? backgroundColor;
   final bool canGoBack;
   final VoidCallback? onLeading;
   final IconData? leadingIcon;
@@ -15,6 +16,7 @@ class ShopAppBar extends StatelessWidget implements PreferredSizeWidget {
     super.key,
     this.titleText,
     this.title,
+    this.backgroundColor,
     this.canGoBack = false,
     this.onLeading,
     this.leadingIcon,
@@ -23,16 +25,13 @@ class ShopAppBar extends StatelessWidget implements PreferredSizeWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.symmetric(horizontal: AppSize.itemSpacing),
-      child: AppBar(
-        elevation: 0,
-        backgroundColor: Colors.transparent,
-        automaticallyImplyLeading: false,
-        leading: leadingWidget(context),
-        title: titleWidget(context),
-        actions: actions,
-      ),
+    return AppBar(
+      elevation: 0,
+      backgroundColor: backgroundColor ?? Colors.transparent,
+      automaticallyImplyLeading: false,
+      leading: leadingWidget(context),
+      title: titleWidget(context),
+      actions: actions,
     );
   }
 
@@ -42,14 +41,17 @@ class ShopAppBar extends StatelessWidget implements PreferredSizeWidget {
         onPressed: Get.back,
         icon: Icon(
           AppIcons.arrowBackFilled,
-          color: Theme.of(context).colorScheme.app.shopHeaderForeground,
+          color: Theme.of(context).colorScheme.onPrimaryContainer,
         ),
       );
     }
     if (leadingIcon != null) {
       return IconButton(
         onPressed: onLeading,
-        icon: Icon(leadingIcon),
+        icon: Icon(
+          leadingIcon,
+          color: Theme.of(context).colorScheme.onPrimaryContainer,
+        ),
       );
     }
     return null;
@@ -57,10 +59,11 @@ class ShopAppBar extends StatelessWidget implements PreferredSizeWidget {
 
   Widget? titleWidget(BuildContext context) {
     if (titleText != null) {
+      final theme = Theme.of(context);
       return Text(
         titleText!,
-        style: TextStyle(
-          color: Theme.of(context).colorScheme.app.shopHeaderForeground,
+        style: theme.textTheme.headlineSmall?.apply(
+          color: theme.colorScheme.onPrimaryContainer,
         ),
       );
     }

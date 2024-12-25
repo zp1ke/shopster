@@ -21,6 +21,7 @@ class AppSize {
   static const sectionSpacing = 32.0;
   static const badgeOffset = 6.0;
   static const productCardPadding = 8.0;
+  static const brandCardPadding = 6.0;
 
   // sizes
   static const pageMinWidth = 200.0;
@@ -31,4 +32,5 @@ class AppSize {
   static const categoriesImageHeightSmall = 50.0;
   static const productCardWidth = 185.0;
   static const productCardMinWidth = 150.0;
+  static const storeAppBarHeight = 440.0;
 }

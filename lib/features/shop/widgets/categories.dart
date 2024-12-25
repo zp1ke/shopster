@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:shopster/common/styles/sizes.dart';
-import 'package:shopster/common/widgets/image/image.dart';
+import 'package:shopster/common/widgets/image/image_circular.dart';
+import 'package:shopster/common/widgets/section_heading.dart';
 import 'package:shopster/features/shop/models/category.dart';
 
 class ShopCategoriesWidget extends StatelessWidget {
@@ -28,37 +29,15 @@ class ShopCategoriesWidget extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          headingWidget(context),
+          SectionHeadingWidget(
+            title: title,
+            foregroundColor: foregroundColor,
+            actionTitle: actionTitle,
+            onAction: onAction,
+          ),
           categoriesWidget(context),
         ],
       ),
-    );
-  }
-
-  Widget headingWidget(BuildContext context) {
-    return Row(
-      spacing: AppSize.itemSpacing,
-      children: [
-        Text(
-          title,
-          style: Theme.of(context)
-              .textTheme
-              .bodyMedium
-              ?.copyWith(color: foregroundColor),
-          maxLines: 1,
-          overflow: TextOverflow.ellipsis,
-        ),
-        if (actionTitle != null)
-          TextButton(
-            onPressed: onAction,
-            child: Text(
-              actionTitle!,
-              style: TextStyle(
-                color: foregroundColor.withValues(alpha: 0.4),
-              ),
-            ),
-          ),
-      ],
     );
   }
 
@@ -87,23 +66,14 @@ class ShopCategoriesWidget extends StatelessWidget {
       },
       child: Column(
         children: [
-          categoryAvatar(category.imageUrl, AppSize.categoriesImageHeightSmall),
+          ImageCircular(
+            size: AppSize.categoriesImageHeightSmall,
+            color: foregroundColor,
+            imageUrl: category.imageUrl,
+          ),
           categoryName(context, category.name),
         ],
       ),
-    );
-  }
-
-  Widget categoryAvatar(String imageUrl, double size) {
-    return Container(
-      width: size,
-      height: size,
-      clipBehavior: Clip.antiAlias,
-      decoration: BoxDecoration(
-        color: foregroundColor,
-        shape: BoxShape.circle,
-      ),
-      child: ImageWidget(imageUrl, fit: BoxFit.cover),
     );
   }
 

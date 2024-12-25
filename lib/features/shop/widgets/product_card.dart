@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:shopster/common/styles/index.dart';
-import 'package:shopster/common/widgets/circular_container.dart';
 import 'package:shopster/common/widgets/image/icons.dart';
 import 'package:shopster/common/widgets/image/image_rounded.dart';
+import 'package:shopster/common/widgets/rounded_container.dart';
 import 'package:shopster/features/shop/models/product.dart';
+import 'package:shopster/features/shop/widgets/brand.dart';
 
 class ProductCardVertical extends StatelessWidget {
   final ShopProduct product;
@@ -112,7 +113,7 @@ class ProductCardVertical extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           productName(context),
-          productBrand(context),
+          BrandWidget(brand: product.brand),
         ],
       ),
     );
@@ -125,28 +126,6 @@ class ProductCardVertical extends StatelessWidget {
       maxLines: 2,
       overflow: TextOverflow.ellipsis,
       textAlign: TextAlign.start,
-    );
-  }
-
-  Widget productBrand(BuildContext context) {
-    final theme = Theme.of(context);
-    return Row(
-      spacing: AppSize.productCardPadding,
-      children: [
-        Text(
-          product.brand,
-          style: theme.textTheme.labelMedium?.apply(color: theme.disabledColor),
-          maxLines: 1,
-          overflow: TextOverflow.ellipsis,
-          textAlign: TextAlign.start,
-        ),
-        Icon(
-          AppIcons.verifiedFilled,
-          color:
-              product.brandVerified ? theme.primaryColor : Colors.transparent,
-          size: AppSize.iconXs,
-        ),
-      ],
     );
   }
 

@@ -1,18 +1,17 @@
-class ShopProduct {
-  final String name;
-  final String brand;
-  final bool brandVerified;
-  final String imageUrl;
+import 'package:shopster/features/shop/models/base_item.dart';
+import 'package:shopster/features/shop/models/brand.dart';
+
+class ShopProduct extends BaseItem {
+  final ShopBrand brand;
   final bool isFav;
   final double price;
   final String? promoImageUrl;
   final int? discountPercent;
 
   ShopProduct({
-    required this.name,
+    required super.name,
+    required super.imageUrl,
     required this.brand,
-    required this.brandVerified,
-    required this.imageUrl,
     required this.isFav,
     required this.price,
     this.promoImageUrl,
