@@ -67,19 +67,22 @@ class _HomeScreen extends StatelessWidget {
     );
   });
 
-  List<ImageRounded> highlightProducts(BuildContext context) {
+  List<Widget> highlightProducts(BuildContext context) {
     final width =
         MediaQuery.of(context).size.width - (AppSize.defaultSpacing * 2);
     return products
         .where((product) => product.promoImageUrl != null)
         .map((product) {
-      return ImageRounded(
-        product.promoImageUrl!,
-        backgroundColor: Theme.of(context).highlightColor,
-        width: width,
-        onPressed: () {
-          ShopController.I.navToPage(StorePage.pageId);
-        },
+      return AspectRatio(
+        aspectRatio: 1.75,
+        child: ImageRounded(
+          product.promoImageUrl!,
+          backgroundColor: Theme.of(context).highlightColor,
+          width: width,
+          onPressed: () {
+            ShopController.I.navToPage(StorePage.pageId);
+          },
+        ),
       );
     }).toList(growable: false);
   }
@@ -128,7 +131,7 @@ class _HomeScreen extends StatelessWidget {
         spacing: AppSize.itemSpacing,
         children: [
           ProductsCarousel(
-            products: highlightProducts(context),
+            items: highlightProducts(context),
           ),
           productsGrid(context),
         ],

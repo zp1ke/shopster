@@ -30,6 +30,13 @@ class ProductCardVertical extends StatelessWidget {
         children: [
           header(context),
           details(context),
+          Container(
+            padding: EdgeInsets.only(
+              top: AppSize.itemSpacing,
+              left: AppSize.itemSpacing / 2,
+            ),
+            child: priceWidget(context),
+          ),
         ],
       ),
     );
@@ -45,7 +52,10 @@ class ProductCardVertical extends StatelessWidget {
       radius: AppSize.itemSpacing,
       child: Stack(
         children: [
-          ImageRounded(product.imageUrl),
+          AspectRatio(
+            aspectRatio: 1,
+            child: ImageRounded(product.imageUrl),
+          ),
           if (product.discountPercent != null)
             Positioned(
               top: positionPadding,
@@ -103,7 +113,6 @@ class ProductCardVertical extends StatelessWidget {
         children: [
           productName(context),
           productBrand(context),
-          priceWidget(context),
         ],
       ),
     );
