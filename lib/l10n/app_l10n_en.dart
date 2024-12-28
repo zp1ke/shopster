@@ -153,6 +153,12 @@ class AppL10nEn extends AppL10n {
   }
 
   @override
+  String get shopStoreFeaturedProducts => 'You might like';
+
+  @override
+  String get shopStoreViewAllProducts => 'View all';
+
+  @override
   String get shopWish => 'Wishlist';
 
   @override

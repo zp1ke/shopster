@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:shopster/common/styles/index.dart';
 
 class RoundedContainer extends StatelessWidget {
-  final Color backgroundColor;
+  final Color? backgroundColor;
   final double? width;
   final double? height;
   final double? radius;
@@ -12,7 +13,7 @@ class RoundedContainer extends StatelessWidget {
 
   const RoundedContainer({
     super.key,
-    required this.backgroundColor,
+    this.backgroundColor,
     this.width,
     this.height,
     this.radius,
@@ -24,7 +25,7 @@ class RoundedContainer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final theRadius = radius ?? width;
+    final theRadius = radius ?? width ?? AppSize.buttonRadius;
     return Container(
       width: width,
       height: height,
@@ -32,8 +33,7 @@ class RoundedContainer extends StatelessWidget {
       margin: margin,
       decoration: BoxDecoration(
         color: backgroundColor,
-        borderRadius:
-            theRadius != null ? BorderRadius.circular(theRadius) : null,
+        borderRadius: BorderRadius.circular(theRadius),
         border: Border.all(color: borderColor ?? Colors.transparent),
       ),
       child: child,

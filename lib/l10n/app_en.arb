@@ -55,6 +55,8 @@
       }
     }
   },
+  "shopStoreFeaturedProducts": "You might like",
+  "shopStoreViewAllProducts": "View all",
   "shopWish": "Wishlist",
   "shopUser": "Profile"
 }

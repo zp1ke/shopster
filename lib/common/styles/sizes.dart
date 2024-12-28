@@ -26,12 +26,13 @@ class AppSize {
   // sizes
   static const pageMinWidth = 200.0;
   static const pageMaxWidth = 500.0;
-  static const shopHeaderSize = pageMaxWidth * 0.62;
+  static const shopHeaderSize = pageMaxWidth * 0.6;
+  static const storeAppBarHeight = pageMaxWidth * 0.6;
   static const appBarHeight = kToolbarHeight;
   static const categoriesBarHeight = 68.0;
   static const categoriesImageHeightSmall = 50.0;
   static const productCardWidth = 185.0;
   static const productCardMinWidth = 150.0;
-  static const storeAppBarHeight = 440.0;
   static const brandsImageHeightSmall = 40.0;
+  static const productBrandCardHeight = 100.0;
 }

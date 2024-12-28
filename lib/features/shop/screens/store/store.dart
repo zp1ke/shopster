@@ -1,14 +1,15 @@
-import 'dart:math';
-
 import 'package:flutter/material.dart';
-import 'package:shopster/common/images.dart';
 import 'package:shopster/common/styles/index.dart';
 import 'package:shopster/common/widgets/image/icons.dart';
 import 'package:shopster/common/widgets/section_heading.dart';
-import 'package:shopster/features/shop/models/brand.dart';
+import 'package:shopster/data/services/brands.dart';
+import 'package:shopster/data/services/categories.dart';
 import 'package:shopster/features/shop/models/page.dart';
 import 'package:shopster/features/shop/widgets/brand_card.dart';
+import 'package:shopster/features/shop/widgets/cards_grid.dart';
+import 'package:shopster/features/shop/widgets/category_view.dart';
 import 'package:shopster/features/shop/widgets/index.dart';
+import 'package:shopster/features/shop/widgets/tab_bar.dart';
 import 'package:shopster/l10n/app_l10n.dart';
 
 class StorePage extends ShopPage {
@@ -33,20 +34,14 @@ class StorePage extends ShopPage {
 }
 
 class _StoreScreen extends StatelessWidget {
-  final brands = List<ShopBrand>.generate(4, (index) {
-    return ShopBrand(
-      name: 'Brand ${index + 1}',
-      imageUrl: AppImage.fakeImageUrl(width: 64, text: 'BRAND-${index + 1}'),
-      isVerified: index % 3 == 0,
-      productsAmount: 10 + index * 3,
-    );
-  });
-
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: appBar(context),
-      body: body(),
+    return DefaultTabController(
+      length: ShopCategoryService().allCategories.length,
+      child: Scaffold(
+        appBar: appBar(context),
+        body: body(context),
+      ),
     );
   }
 
@@ -60,7 +55,8 @@ class _StoreScreen extends StatelessWidget {
     );
   }
 
-  Widget body() {
+  Widget body(BuildContext context) {
+    final categories = ShopCategoryService().allCategories;
     return NestedScrollView(
       headerSliverBuilder: (context, innerBoxIsScrolled) {
         return [
@@ -70,23 +66,42 @@ class _StoreScreen extends StatelessWidget {
             floating: true,
             backgroundColor: Theme.of(context).canvasColor,
             expandedHeight: AppSize.storeAppBarHeight,
-            flexibleSpace: Padding(
-              padding: EdgeInsets.symmetric(horizontal: AppSize.defaultSpacing),
-              child: ListView(
-                shrinkWrap: true,
-                physics: NeverScrollableScrollPhysics(),
-                children: [
-                  ShopSearchBar(
-                      hintText: AppL10n.of(context).shopStoreSearchHint),
-                  featuresBrandsHeader(context),
-                  featuresBrands(context),
-                ],
-              ),
+            flexibleSpace: header(context),
+            bottom: ShopTabBar(
+              tabs: categories
+                  .map((category) => Tab(child: Text(category.name)))
+                  .toList(growable: false),
             ),
           ),
         ];
       },
-      body: Container(),
+      body: Padding(
+        padding: EdgeInsets.symmetric(vertical: AppSize.itemSpacing),
+        child: TabBarView(
+          children: categories.map((category) {
+            return CategoryView(category: category);
+          }).toList(growable: false),
+        ),
+      ),
+    );
+  }
+
+  Widget header(BuildContext context) {
+    return Padding(
+      padding: EdgeInsets.only(
+        top: AppSize.itemSpacing / 2,
+        left: AppSize.defaultSpacing,
+        right: AppSize.defaultSpacing,
+      ),
+      child: ListView(
+        shrinkWrap: true,
+        physics: NeverScrollableScrollPhysics(),
+        children: [
+          ShopSearchBar(hintText: AppL10n.of(context).shopStoreSearchHint),
+          featuresBrandsHeader(context),
+          featuresBrands(context),
+        ],
+      ),
     );
   }
 
@@ -100,19 +115,16 @@ class _StoreScreen extends StatelessWidget {
   }
 
   Widget featuresBrands(BuildContext context) {
-    var cardWidth = AppSize.productCardWidth;
-    final screenWidth =
-        MediaQuery.of(context).size.width - AppSize.itemSpacing * 2;
-    if (screenWidth / cardWidth < 2) {
-      cardWidth = max(screenWidth / 2, AppSize.productCardMinWidth);
-    }
-    return Wrap(
-      spacing: AppSize.itemSpacing,
-      runSpacing: AppSize.itemSpacing,
-      children: brands
-          .map((brand) =>
-              BrandCard(brand: brand, size: cardWidth - AppSize.itemSpacing))
-          .toList(growable: false),
+    final brands = ShopBrandService().popularBrands();
+    return CardsGrid(
+      itemsCount: brands.length,
+      itemBuilder: (context, index, cardWidth) {
+        final brand = brands[index];
+        return BrandCard(
+          brand: brand,
+          size: cardWidth - AppSize.itemSpacing,
+        );
+      },
     );
   }
 }

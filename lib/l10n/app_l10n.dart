@@ -381,6 +381,18 @@ abstract class AppL10n {
   /// **'{amount} Products'**
   String shopStoreBrandProductsAmount(int amount);
 
+  /// No description provided for @shopStoreFeaturedProducts.
+  ///
+  /// In en, this message translates to:
+  /// **'You might like'**
+  String get shopStoreFeaturedProducts;
+
+  /// No description provided for @shopStoreViewAllProducts.
+  ///
+  /// In en, this message translates to:
+  /// **'View all'**
+  String get shopStoreViewAllProducts;
+
   /// No description provided for @shopWish.
   ///
   /// In en, this message translates to:

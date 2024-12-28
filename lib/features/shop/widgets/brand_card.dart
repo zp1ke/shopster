@@ -8,12 +8,14 @@ import 'package:shopster/l10n/app_l10n.dart';
 
 class BrandCard extends StatelessWidget {
   final ShopBrand brand;
-  final double size;
+  final double? size;
+  final bool withBorder;
 
   const BrandCard({
     super.key,
     required this.brand,
-    required this.size,
+    this.size,
+    this.withBorder = true,
   });
 
   @override
@@ -22,7 +24,8 @@ class BrandCard extends StatelessWidget {
       width: size,
       radius: AppSize.productCardPadding,
       backgroundColor: Colors.transparent,
-      borderColor: Theme.of(context).colorScheme.onPrimaryContainer,
+      borderColor:
+          withBorder ? Theme.of(context).colorScheme.onPrimaryContainer : null,
       padding: EdgeInsets.all(AppSize.brandCardPadding),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.end,
